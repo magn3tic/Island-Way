@@ -93,4 +93,4 @@
 {% comment %} 
   Custom 
 {% endcomment %}
-<link href="{{ 'style.css' | asset_url }}" rel="stylesheet">
+{{ 'style.css' | asset_url | stylesheet_tag: preload: true }}
