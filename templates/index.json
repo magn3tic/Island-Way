@@ -1,1 +1,495 @@
-{"sections":{"page_builder_hero_clone_FzwVdT":{"type":"page-builder-hero-clone","custom_css":["@media (min-width: 1400px) {.hero-imege img {max-width: 900px; }}"],"name":"Hero Section Cloned","settings":{"video_url":"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/10fc4f52037a46d79f7e03ea37592158.mp4","heading":"MAKE A BREAK","subheading":"FOR THE ISLANDS TODAY","text":"<p>Island Way turns carefully selected fruit into delicious frozen<br\/>treats that are paradise in every bite.<\/p>","button_label":"Explore Flavors","button_link":"shopify:\/\/pages\/flavors","mobile_image":"shopify:\/\/shop_images\/Island-bg.webp","desktop_image":"shopify:\/\/shop_images\/Island-bg.webp","left_palm":"shopify:\/\/shop_images\/left_palms.webp","right_palm":"shopify:\/\/shop_images\/right_palms.webp","add_custom_class":false}},"page_builder_hero_FFW8cJ":{"type":"page-builder-hero","blocks":{"fruit_image_Uxq8xK":{"type":"fruit_image","settings":{"image":"shopify:\/\/shop_images\/pineapple.webp"}},"fruit_image_G4AxXw":{"type":"fruit_image","settings":{"image":"shopify:\/\/shop_images\/coconut.webp"}},"fruit_image_HiWbVr":{"type":"fruit_image","settings":{"image":"shopify:\/\/shop_images\/orange.webp"}},"fruit_image_qBUnzK":{"type":"fruit_image","settings":{"image":"shopify:\/\/shop_images\/pineapple-cut.webp"}},"fruit_image_wx9Etd":{"type":"fruit_image","settings":{"image":"shopify:\/\/shop_images\/strawberry1.webp"}},"fruit_image_gddKfh":{"type":"fruit_image","settings":{"image":"shopify:\/\/shop_images\/pineapple-cut.webp"}},"fruit_image_YdC3Ya":{"type":"fruit_image","settings":{"image":"shopify:\/\/shop_images\/orange3.webp"}},"fruit_image_zXnrjG":{"type":"fruit_image","settings":{"image":"shopify:\/\/shop_images\/orange4.webp"}}},"block_order":["fruit_image_Uxq8xK","fruit_image_G4AxXw","fruit_image_HiWbVr","fruit_image_qBUnzK","fruit_image_wx9Etd","fruit_image_gddKfh","fruit_image_YdC3Ya","fruit_image_zXnrjG"],"disabled":true,"name":"Hero Section","settings":{"video_url":"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/10fc4f52037a46d79f7e03ea37592158.mp4","heading":"MAKE A BREAK","subheading":"FOR THE ISLANDS TODAY","text":"<p>Island Way turns carefully selected fruit into delicious frozen<br\/>treats that are paradise in every bite.<\/p>","button_label":"Explore Flavors","button_link":"https:\/\/islandway.com\/collections\/all","left_palm":"shopify:\/\/shop_images\/left_palms.webp","right_palm":"shopify:\/\/shop_images\/right_palms.webp","add_custom_class":true}},"page_bulider_company_QPUyMK":{"type":"page-bulider-company","blocks":{"logo_UejjFh":{"type":"logo","settings":{"logo":"shopify:\/\/shop_images\/b9fe9d4f8eef2a0406a6edbb4ff6c75615d023ee.webp"}},"logo_yfyHEx":{"type":"logo","settings":{"logo":"shopify:\/\/shop_images\/35a0cb5619e2f653471cb08d20a092e16bcf3df3.webp"}},"logo_HP6GeR":{"type":"logo","settings":{"logo":"shopify:\/\/shop_images\/03f1c966b5aebcbcd2a1aaea366f82733cd7879e.webp"}},"logo_yqpmkr":{"type":"logo","settings":{"logo":"shopify:\/\/shop_images\/Wegmans-logo.png"}},"logo_TwqadH":{"type":"logo","settings":{"logo":"shopify:\/\/shop_images\/krogers-logo.png"}},"logo_BKhQbK":{"type":"logo","settings":{"logo":"shopify:\/\/shop_images\/b9fe9d4f8eef2a0406a6edbb4ff6c75615d023ee.webp"}},"logo_XdVhX6":{"type":"logo","settings":{"logo":"shopify:\/\/shop_images\/35a0cb5619e2f653471cb08d20a092e16bcf3df3.webp"}},"logo_tpMFAG":{"type":"logo","settings":{"logo":"shopify:\/\/shop_images\/03f1c966b5aebcbcd2a1aaea366f82733cd7879e.webp"}},"logo_BCq7gh":{"type":"logo","settings":{"logo":"shopify:\/\/shop_images\/Wegmans-logo.png"}}},"block_order":["logo_UejjFh","logo_yfyHEx","logo_HP6GeR","logo_yqpmkr","logo_TwqadH","logo_BKhQbK","logo_XdVhX6","logo_tpMFAG","logo_BCq7gh"],"name":"Logos Section","settings":{"enable_shape":false}},"page_builder_features_A8XRVk":{"type":"page-builder-features","blocks":{"feature_item_JPzYcc":{"type":"feature_item","settings":{"title":"Nothing Artificial","text":"<p>Naturally Flavored & Colored<\/p>"}},"feature_item_qf9eMw":{"type":"feature_item","settings":{"title":"No Preservatives","text":"<p>Made with Simple Ingredients &<br\/> Pure Intention<\/p>"}},"feature_item_xqXWdP":{"type":"feature_item","settings":{"title":"Quality Ingredients","text":"<p>Non-GMO & Always Gluten Free for<br\/> Feel-Good Indulgence<\/p>"}}},"block_order":["feature_item_JPzYcc","feature_item_qf9eMw","feature_item_xqXWdP"],"name":"Features Section","settings":{"left_img":"shopify:\/\/shop_images\/hand-bowl1.webp","right_img":"shopify:\/\/shop_images\/hand-bowl2.webp","feature_tag":"","heading":"Encased in real fruit shells","desc_1":"<p>Taste the tropics with creamy premium sorbet, handcrafted with care and served in real fruit shells for a true island experience.<br\/><\/p><p>Each of our nine delectable flavors has the perfect blend of nature’s<br\/>finest fruits to whisk you off to your everyday escape.<\/p>","button_label":"FIND IN STORES","button_link":"shopify:\/\/pages\/stores","shape_left":"shopify:\/\/shop_images\/service-palml.webp","shape_right":"shopify:\/\/shop_images\/service-palmr.webp"}},"page_builder_videos_cgN4yf":{"type":"page-builder-videos","name":"Video Section","settings":{"bg_video":"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/73856ce4bd0247e3a9b8e058de3c6cd9.mp4","product_video":"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/6aa6f9882dc240acac58c6e13a7ef61b.mp4","poster":"shopify:\/\/shop_images\/product-video.webp","mute_video":true,"loop":true}},"page_builder_products_list_Hp8wWx":{"type":"page-builder-products-list","blocks":{"product_block_66Linw":{"type":"product_block","settings":{"product":"variety-10-pack"}},"product_block_HpTdjR":{"type":"product_block","settings":{"product":"tropical-mango"}},"product_block_NaNYJE":{"type":"product_block","settings":{"product":"orange-cream"}},"product_block_PGzehp":{"type":"product_block","settings":{"product":"pina-colada"}},"product_block_DPLmY3":{"type":"product_block","settings":{"product":"zesty-pomegranate"}},"product_block_JKtgKb":{"type":"product_block","settings":{"product":"heavenly-coconut"}},"product_block_6QcdET":{"type":"product_block","settings":{"product":"red-berry-ruby-grapefruit"}},"product_block_RGGRkX":{"type":"product_block","settings":{"product":"passionate-mango"}}},"block_order":["product_block_66Linw","product_block_HpTdjR","product_block_NaNYJE","product_block_PGzehp","product_block_DPLmY3","product_block_JKtgKb","product_block_6QcdET","product_block_RGGRkX"],"name":"Featured Products","settings":{"subheading":"Our Products","heading":"Tropical flavors that suit all islanders","cta_label":"EXPLORE ALL FLAVORS","cta_link":"shopify:\/\/pages\/flavors"}},"page_builder_testimonials_GWakpw":{"type":"page-builder-testimonials","blocks":{"testimonial_XLhTKe":{"type":"testimonial","settings":{"title":"Review","review_text":"My taste buds were in heaven you must give this a whirl.","author":"Leslie","rating":"5"}},"testimonial_BB7tdQ":{"type":"testimonial","settings":{"title":"Review","review_text":"Thank you for such a delicious & fun treat! ","author":"AnnMarie","rating":"5"}},"testimonial_rNTBbD":{"type":"testimonial","settings":{"title":"Review","review_text":"These are so creamy, so smooth, so fruity and delicious!","author":"Vanessa","rating":"5"}},"testimonial_HYEGdH":{"type":"testimonial","settings":{"title":"Review","review_text":"All the flavors are so good and perfect for summer","author":"Kat","rating":"5"}},"testimonial_Vm4LTk":{"type":"testimonial","settings":{"title":"Review","review_text":"These are an absolute necessity","author":"Aziza","rating":"5"}},"testimonial_8far9U":{"type":"testimonial","settings":{"title":"Review","review_text":"So freaking good!","author":"Laura","rating":"5"}},"testimonial_y99YGd":{"type":"testimonial","disabled":true,"settings":{"title":"Review","review_text":"Tastes like vacation in a shell!","author":"","rating":"5"}},"testimonial_mnfMAM":{"type":"testimonial","disabled":true,"settings":{"title":"Review","review_text":"My kids can’t get enough of these!","author":"","rating":"5"}},"testimonial_8hygfm":{"type":"testimonial","disabled":true,"settings":{"title":"Review","review_text":"So refreshing and perfectly creamy.","author":"","rating":"5"}},"testimonial_3cgnfK":{"type":"testimonial","disabled":true,"settings":{"title":"Review","review_text":"It’s our new dessert obsession.","author":"","rating":"5"}},"testimonial_whwzXn":{"type":"testimonial","disabled":true,"settings":{"title":"Review","review_text":"These feel and taste fancy!","author":"","rating":"5"}},"testimonial_fA3jqi":{"type":"testimonial","disabled":true,"settings":{"title":"Review","review_text":"The coconut one? Unreal.","author":"","rating":"5"}}},"block_order":["testimonial_XLhTKe","testimonial_BB7tdQ","testimonial_rNTBbD","testimonial_HYEGdH","testimonial_Vm4LTk","testimonial_8far9U","testimonial_y99YGd","testimonial_mnfMAM","testimonial_8hygfm","testimonial_3cgnfK","testimonial_whwzXn","testimonial_fA3jqi"],"name":"Testimonials Section","settings":{}},"page_builder_story_hAWrkq":{"type":"page-builder-story","name":"Story Section","settings":{"left_title":"Our Story","left_heading":"AN ODE TO NATURE'S PERFECT PACKAGING","description":"<p>Island Way began as a way to share the most mouthwatering sorbet while letting you savor a taste of palm-shaded paradise. <\/p><p>As we turned tropical fruits into frozen treats, we took our cue from nature’s perfect packaging, the natural fruit shell.<\/p><p>Encased in real husks and peels, every serving is portion-perfect, biodegradable, and naturally beautiful, giving you that straight-from-the-island, immersive everyday escape with less waste.<\/p>","icon_image":"shopify:\/\/shop_images\/blue-star.webp","main_image":"shopify:\/\/shop_images\/story-main.webp"}},"page_builder_welcome_FpTxNq":{"type":"page-builder-welcome","blocks":{"about_mqM7jC":{"type":"about","settings":{"about_image":"shopify:\/\/shop_images\/celebration.webp","about_subheading":"The Island Way","about_heading":"WELCOME TO THE ISLAND","about_text":"<p>Island Way fruits are hand-picked, hand-carved, and hand-crafted into our sorbet.<\/p><p>Each fruit is harvested at peak freshness from local fields and orchards, precisely sliced, scooped and flash-frozen to preserve nature’s perfect design. All our sorbets are crafted from the finest non-GMO ingredients, in a world-class facility, by highly skilled confectioners who maintain exceptional standards for quality and safety.<\/p><p>No preservatives, no artificial flavors, no artificial colors. Just natural sweetness and a blissful break for the islands.<\/p>"}},"product_slider_F3NqKn":{"type":"product_slider","settings":{}},"product_slide_yd9PiU":{"type":"product_slide","settings":{"slide_image":"shopify:\/\/shop_images\/mango-cream.webp"}},"product_slide_bVaQBB":{"type":"product_slide","settings":{"slide_image":"shopify:\/\/shop_images\/pineapple-cream.webp"}},"product_slide_XC9TPf":{"type":"product_slide","settings":{"slide_image":"shopify:\/\/shop_images\/coconut-cream.webp"}},"product_slide_ATp36V":{"type":"product_slide","settings":{"slide_image":"shopify:\/\/shop_images\/orange-cream.webp"}},"product_slide_DYEMrq":{"type":"product_slide","settings":{"slide_image":"shopify:\/\/shop_images\/berry-cream.webp"}},"product_slide_DTxnE9":{"type":"product_slide","settings":{"slide_image":"shopify:\/\/shop_images\/mango-cream.webp"}},"product_slide_wY8reh":{"type":"product_slide","settings":{"slide_image":"shopify:\/\/shop_images\/pineapple-cream.webp"}},"product_slide_id36r9":{"type":"product_slide","settings":{"slide_image":"shopify:\/\/shop_images\/coconut-cream.webp"}},"product_slide_X7TNDi":{"type":"product_slide","settings":{"slide_image":"shopify:\/\/shop_images\/orange-cream.webp"}},"product_slide_Y43YDy":{"type":"product_slide","settings":{"slide_image":"shopify:\/\/shop_images\/berry-cream.webp"}},"sustainability_YCk8kV":{"type":"sustainability","settings":{"sustain_subheading":"Sustainability","sustain_heading":"Nature knows best","sustain_text":"<p>That’s why we handcraft our sorbets to come in nature’s perfect, no-plastic, compostable packaging — the original fruit shells.<\/p><p>Our goal is to inspire your moment of bliss with handcrafted frozen treats, made from the finest fruits and served in natural shells, so that you’re instantly transported to your island escape.<\/p>"}}},"block_order":["about_mqM7jC","product_slider_F3NqKn","product_slide_yd9PiU","product_slide_bVaQBB","product_slide_XC9TPf","product_slide_ATp36V","product_slide_DYEMrq","product_slide_DTxnE9","product_slide_wY8reh","product_slide_id36r9","product_slide_X7TNDi","product_slide_Y43YDy","sustainability_YCk8kV"],"name":"Welcome Section","settings":{}},"17602087342138003e":{"type":"apps","settings":{}}},"order":["page_builder_hero_clone_FzwVdT","page_builder_hero_FFW8cJ","page_bulider_company_QPUyMK","page_builder_features_A8XRVk","page_builder_videos_cgN4yf","page_builder_products_list_Hp8wWx","page_builder_testimonials_GWakpw","page_builder_story_hAWrkq","page_builder_welcome_FpTxNq","17602087342138003e"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page_builder_hero_clone_FzwVdT": {
+      "type": "page-builder-hero-clone",
+      "custom_css": [
+        "@media (min-width: 1400px) {.hero-imege img {max-width: 900px; }}"
+      ],
+      "name": "Hero Section Cloned",
+      "settings": {
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/10fc4f52037a46d79f7e03ea37592158.mp4",
+        "heading": "MAKE A BREAK",
+        "subheading": "FOR THE ISLANDS TODAY",
+        "text": "<p>Island Way turns carefully selected fruit into delicious frozen<br/>treats that are paradise in every bite.</p>",
+        "button_label": "Explore Flavors",
+        "button_link": "shopify://pages/flavors",
+        "mobile_image": "shopify://shop_images/Island-bg.webp",
+        "desktop_image": "shopify://shop_images/Island-bg.webp",
+        "left_palm": "shopify://shop_images/left_palms.webp",
+        "right_palm": "shopify://shop_images/right_palms.webp",
+        "add_custom_class": false
+      }
+    },
+    "page_bulider_company_QPUyMK": {
+      "type": "page-bulider-company",
+      "blocks": {
+        "logo_UejjFh": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/b9fe9d4f8eef2a0406a6edbb4ff6c75615d023ee.webp"
+          }
+        },
+        "logo_yfyHEx": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/35a0cb5619e2f653471cb08d20a092e16bcf3df3.webp"
+          }
+        },
+        "logo_HP6GeR": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/03f1c966b5aebcbcd2a1aaea366f82733cd7879e.webp"
+          }
+        },
+        "logo_yqpmkr": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Wegmans-logo.png"
+          }
+        },
+        "logo_TwqadH": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/krogers-logo.png"
+          }
+        },
+        "logo_BKhQbK": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/b9fe9d4f8eef2a0406a6edbb4ff6c75615d023ee.webp"
+          }
+        },
+        "logo_XdVhX6": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/35a0cb5619e2f653471cb08d20a092e16bcf3df3.webp"
+          }
+        },
+        "logo_tpMFAG": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/03f1c966b5aebcbcd2a1aaea366f82733cd7879e.webp"
+          }
+        },
+        "logo_BCq7gh": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Wegmans-logo.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_UejjFh",
+        "logo_yfyHEx",
+        "logo_HP6GeR",
+        "logo_yqpmkr",
+        "logo_TwqadH",
+        "logo_BKhQbK",
+        "logo_XdVhX6",
+        "logo_tpMFAG",
+        "logo_BCq7gh"
+      ],
+      "name": "Logos Section",
+      "settings": {
+        "enable_shape": false
+      }
+    },
+    "page_builder_features_A8XRVk": {
+      "type": "page-builder-features",
+      "blocks": {
+        "feature_item_JPzYcc": {
+          "type": "feature_item",
+          "settings": {
+            "title": "Nothing Artificial",
+            "text": "<p>Naturally Flavored & Colored</p>"
+          }
+        },
+        "feature_item_qf9eMw": {
+          "type": "feature_item",
+          "settings": {
+            "title": "No Preservatives",
+            "text": "<p>Made with Simple Ingredients &<br/> Pure Intention</p>"
+          }
+        },
+        "feature_item_xqXWdP": {
+          "type": "feature_item",
+          "settings": {
+            "title": "Quality Ingredients",
+            "text": "<p>Non-GMO & Always Gluten Free for<br/> Feel-Good Indulgence</p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_item_JPzYcc",
+        "feature_item_qf9eMw",
+        "feature_item_xqXWdP"
+      ],
+      "name": "Features Section",
+      "settings": {
+        "left_img": "shopify://shop_images/hand-bowl1.webp",
+        "right_img": "shopify://shop_images/hand-bowl2.webp",
+        "feature_tag": "",
+        "heading": "Encased in real fruit shells",
+        "desc_1": "<p>Taste the tropics with creamy premium sorbet, handcrafted with care and served in real fruit shells for a true island experience.<br/></p><p>Each of our nine delectable flavors has the perfect blend of nature’s<br/>finest fruits to whisk you off to your everyday escape.</p>",
+        "button_label": "FIND IN STORES",
+        "button_link": "shopify://pages/stores",
+        "shape_left": "shopify://shop_images/service-palml.webp",
+        "shape_right": "shopify://shop_images/service-palmr.webp"
+      }
+    },
+    "page_builder_videos_cgN4yf": {
+      "type": "page-builder-videos",
+      "name": "Video Section",
+      "settings": {
+        "bg_video": "https://cdn.shopify.com/videos/c/o/v/73856ce4bd0247e3a9b8e058de3c6cd9.mp4",
+        "product_video": "https://cdn.shopify.com/videos/c/o/v/6aa6f9882dc240acac58c6e13a7ef61b.mp4",
+        "poster": "shopify://shop_images/product-video.webp",
+        "mute_video": true,
+        "loop": true
+      }
+    },
+    "page_builder_products_list_Hp8wWx": {
+      "type": "page-builder-products-list",
+      "blocks": {
+        "product_block_66Linw": {
+          "type": "product_block",
+          "settings": {
+            "product": "variety-10-pack"
+          }
+        },
+        "product_block_HpTdjR": {
+          "type": "product_block",
+          "settings": {
+            "product": "tropical-mango"
+          }
+        },
+        "product_block_NaNYJE": {
+          "type": "product_block",
+          "settings": {
+            "product": "orange-cream"
+          }
+        },
+        "product_block_PGzehp": {
+          "type": "product_block",
+          "settings": {
+            "product": "pina-colada"
+          }
+        },
+        "product_block_DPLmY3": {
+          "type": "product_block",
+          "settings": {
+            "product": "zesty-pomegranate"
+          }
+        },
+        "product_block_JKtgKb": {
+          "type": "product_block",
+          "settings": {
+            "product": "heavenly-coconut"
+          }
+        },
+        "product_block_6QcdET": {
+          "type": "product_block",
+          "settings": {
+            "product": "red-berry-ruby-grapefruit"
+          }
+        },
+        "product_block_RGGRkX": {
+          "type": "product_block",
+          "settings": {
+            "product": "passionate-mango"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_66Linw",
+        "product_block_HpTdjR",
+        "product_block_NaNYJE",
+        "product_block_PGzehp",
+        "product_block_DPLmY3",
+        "product_block_JKtgKb",
+        "product_block_6QcdET",
+        "product_block_RGGRkX"
+      ],
+      "name": "Featured Products",
+      "settings": {
+        "subheading": "Our Products",
+        "heading": "Tropical flavors that suit all islanders",
+        "cta_label": "EXPLORE ALL FLAVORS",
+        "cta_link": "shopify://pages/flavors"
+      }
+    },
+    "page_builder_testimonials_GWakpw": {
+      "type": "page-builder-testimonials",
+      "blocks": {
+        "testimonial_XLhTKe": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Review",
+            "review_text": "My taste buds were in heaven you must give this a whirl.",
+            "author": "Leslie",
+            "rating": "5"
+          }
+        },
+        "testimonial_BB7tdQ": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Review",
+            "review_text": "Thank you for such a delicious & fun treat! ",
+            "author": "AnnMarie",
+            "rating": "5"
+          }
+        },
+        "testimonial_rNTBbD": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Review",
+            "review_text": "These are so creamy, so smooth, so fruity and delicious!",
+            "author": "Vanessa",
+            "rating": "5"
+          }
+        },
+        "testimonial_HYEGdH": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Review",
+            "review_text": "All the flavors are so good and perfect for summer",
+            "author": "Kat",
+            "rating": "5"
+          }
+        },
+        "testimonial_Vm4LTk": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Review",
+            "review_text": "These are an absolute necessity",
+            "author": "Aziza",
+            "rating": "5"
+          }
+        },
+        "testimonial_8far9U": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Review",
+            "review_text": "So freaking good!",
+            "author": "Laura",
+            "rating": "5"
+          }
+        },
+        "testimonial_y99YGd": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "title": "Review",
+            "review_text": "Tastes like vacation in a shell!",
+            "author": "",
+            "rating": "5"
+          }
+        },
+        "testimonial_mnfMAM": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "title": "Review",
+            "review_text": "My kids can’t get enough of these!",
+            "author": "",
+            "rating": "5"
+          }
+        },
+        "testimonial_8hygfm": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "title": "Review",
+            "review_text": "So refreshing and perfectly creamy.",
+            "author": "",
+            "rating": "5"
+          }
+        },
+        "testimonial_3cgnfK": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "title": "Review",
+            "review_text": "It’s our new dessert obsession.",
+            "author": "",
+            "rating": "5"
+          }
+        },
+        "testimonial_whwzXn": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "title": "Review",
+            "review_text": "These feel and taste fancy!",
+            "author": "",
+            "rating": "5"
+          }
+        },
+        "testimonial_fA3jqi": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "title": "Review",
+            "review_text": "The coconut one? Unreal.",
+            "author": "",
+            "rating": "5"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_XLhTKe",
+        "testimonial_BB7tdQ",
+        "testimonial_rNTBbD",
+        "testimonial_HYEGdH",
+        "testimonial_Vm4LTk",
+        "testimonial_8far9U",
+        "testimonial_y99YGd",
+        "testimonial_mnfMAM",
+        "testimonial_8hygfm",
+        "testimonial_3cgnfK",
+        "testimonial_whwzXn",
+        "testimonial_fA3jqi"
+      ],
+      "name": "Testimonials Section",
+      "settings": {}
+    },
+    "page_builder_story_hAWrkq": {
+      "type": "page-builder-story",
+      "name": "Story Section",
+      "settings": {
+        "left_title": "Our Story",
+        "left_heading": "AN ODE TO NATURE'S PERFECT PACKAGING",
+        "description": "<p>Island Way began as a way to share the most mouthwatering sorbet while letting you savor a taste of palm-shaded paradise. </p><p>As we turned tropical fruits into frozen treats, we took our cue from nature’s perfect packaging, the natural fruit shell.</p><p>Encased in real husks and peels, every serving is portion-perfect, biodegradable, and naturally beautiful, giving you that straight-from-the-island, immersive everyday escape with less waste.</p>",
+        "icon_image": "shopify://shop_images/blue-star.webp",
+        "main_image": "shopify://shop_images/story-main.webp"
+      }
+    },
+    "page_builder_welcome_FpTxNq": {
+      "type": "page-builder-welcome",
+      "blocks": {
+        "about_mqM7jC": {
+          "type": "about",
+          "settings": {
+            "about_image": "shopify://shop_images/celebration.webp",
+            "about_subheading": "The Island Way",
+            "about_heading": "WELCOME TO THE ISLAND",
+            "about_text": "<p>Island Way fruits are hand-picked, hand-carved, and hand-crafted into our sorbet.</p><p>Each fruit is harvested at peak freshness from local fields and orchards, precisely sliced, scooped and flash-frozen to preserve nature’s perfect design. All our sorbets are crafted from the finest non-GMO ingredients, in a world-class facility, by highly skilled confectioners who maintain exceptional standards for quality and safety.</p><p>No preservatives, no artificial flavors, no artificial colors. Just natural sweetness and a blissful break for the islands.</p>"
+          }
+        },
+        "product_slider_F3NqKn": {
+          "type": "product_slider",
+          "settings": {}
+        },
+        "product_slide_yd9PiU": {
+          "type": "product_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/mango-cream.webp"
+          }
+        },
+        "product_slide_bVaQBB": {
+          "type": "product_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/pineapple-cream.webp"
+          }
+        },
+        "product_slide_XC9TPf": {
+          "type": "product_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/coconut-cream.webp"
+          }
+        },
+        "product_slide_ATp36V": {
+          "type": "product_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/orange-cream.webp"
+          }
+        },
+        "product_slide_DYEMrq": {
+          "type": "product_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/berry-cream.webp"
+          }
+        },
+        "product_slide_DTxnE9": {
+          "type": "product_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/mango-cream.webp"
+          }
+        },
+        "product_slide_wY8reh": {
+          "type": "product_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/pineapple-cream.webp"
+          }
+        },
+        "product_slide_id36r9": {
+          "type": "product_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/coconut-cream.webp"
+          }
+        },
+        "product_slide_X7TNDi": {
+          "type": "product_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/orange-cream.webp"
+          }
+        },
+        "product_slide_Y43YDy": {
+          "type": "product_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/berry-cream.webp"
+          }
+        },
+        "sustainability_YCk8kV": {
+          "type": "sustainability",
+          "settings": {
+            "sustain_subheading": "Sustainability",
+            "sustain_heading": "Nature knows best",
+            "sustain_text": "<p>That’s why we handcraft our sorbets to come in nature’s perfect, no-plastic, compostable packaging — the original fruit shells.</p><p>Our goal is to inspire your moment of bliss with handcrafted frozen treats, made from the finest fruits and served in natural shells, so that you’re instantly transported to your island escape.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "about_mqM7jC",
+        "product_slider_F3NqKn",
+        "product_slide_yd9PiU",
+        "product_slide_bVaQBB",
+        "product_slide_XC9TPf",
+        "product_slide_ATp36V",
+        "product_slide_DYEMrq",
+        "product_slide_DTxnE9",
+        "product_slide_wY8reh",
+        "product_slide_id36r9",
+        "product_slide_X7TNDi",
+        "product_slide_Y43YDy",
+        "sustainability_YCk8kV"
+      ],
+      "name": "Welcome Section",
+      "settings": {}
+    },
+    "17602087342138003e": {
+      "type": "apps",
+      "settings": {}
+    }
+  },
+  "order": [
+    "page_builder_hero_clone_FzwVdT",
+    "page_bulider_company_QPUyMK",
+    "page_builder_features_A8XRVk",
+    "page_builder_videos_cgN4yf",
+    "page_builder_products_list_Hp8wWx",
+    "page_builder_testimonials_GWakpw",
+    "page_builder_story_hAWrkq",
+    "page_builder_welcome_FpTxNq",
+    "17602087342138003e"
+  ]
+}
