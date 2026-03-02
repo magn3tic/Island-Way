@@ -1,6 +1,7 @@
 {% comment %} 
   Hero Section with Video Background and Decorative Fruit Images 
 {% endcomment %}
+
 <section class="hero-area {% if section.settings.add_custom_class %}hero-no-anim{% endif %} pb-0">
   {% if section.settings.video_url != blank %}
     <video 
@@ -47,7 +48,7 @@
                 <img 
                   alt='Islandway Background' 
                   src="{{ section.settings.mobile_image | image_url: width: 768 }}" 
-                  loading="lazy"
+                  fetchpriority="high"
                   decoding="async">
               </picture>
             {% endif %}
