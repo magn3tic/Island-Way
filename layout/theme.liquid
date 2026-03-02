@@ -1,20 +1,18 @@
 <!doctype html>
-<html 
-  lang="{{ request.locale.iso_code }}"
-  class="{% if request.design_mode %}design-mode{% endif %}">
+<html lang="{{ request.locale.iso_code }}" class="{% if request.design_mode %}design-mode{% endif %}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="{{ settings.color_primary }}">
-
+  {% if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
   <link rel="canonical" href="{{ canonical_url }}">
   <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
   <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-
-  {%- unless settings.favicon == blank -%}
-      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: '32', height: '32' }}">
-  {%- endunless -%}
+  {% if settings.favicon != blank %}
+  <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: '32', height: '32' }}">
+  {% else %}
   <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/favicon.png?v=1768335490">
+  {%- endif -%}
 
   <title>
     {{ page_title }}
@@ -22,10 +20,6 @@
     {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
     {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
   </title>
-
-  {% if page_description %}
-    <meta name="description" content="{{ page_description | escape }}">
-  {% endif %}
 
   {% render 'meta-tags' %}
 
