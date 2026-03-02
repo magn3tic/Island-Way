@@ -8,18 +8,18 @@
   <link rel="canonical" href="{{ canonical_url }}">
   <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
   <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-  {% if settings.favicon != blank %}
-  <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: '32', height: '32' }}">
-  {% else %}
-  <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/favicon.png?v=1768335490">
-  {%- endif -%}
 
-  <title>
+   <title>
     {{ page_title }}
     {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
     {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
     {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
   </title>
+  {% if settings.favicon != blank %}
+  <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: '32', height: '32' }}">
+  {% else %}
+  <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/favicon.png?v=1768335490">
+  {%- endif -%}
 
   {% render 'meta-tags' %}
 
