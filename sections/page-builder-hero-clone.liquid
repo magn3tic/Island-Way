@@ -4,7 +4,12 @@
 
 <section class="hero-area {% if section.settings.add_custom_class %}hero-no-anim{% endif %} pb-0">
   {% if section.settings.video_url != blank %}
-    <video autoplay muted loop playsinline
+    <video 
+      autoplay 
+      muted 
+      loop 
+      playsinline
+      preload="auto"
       poster="{{ section.settings.poster | image_url: width: 1920 }}">
       <source src="{{ section.settings.video_url }}" type="video/mp4">
     </video>
