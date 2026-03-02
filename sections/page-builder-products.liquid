@@ -54,7 +54,7 @@
                   {% if meta_fruit != blank %}
                     <span class="food-shadow"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/food-shadow.webp"></span>
                     <span class="cream-flavour">
-                      <img src="{{ meta_fruit | image_url: width: 600 }}" alt="{{ product.title }}">
+                      <img src="{{ meta_fruit | image_url: width: 600 }}" alt="{{ product.title }}" loading="lazy">
                     </span>
                   {% endif %}  
                 </div>
