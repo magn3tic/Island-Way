@@ -107,17 +107,17 @@
                 <a href="{{ product.url }}" class="product-box et-js-tilt">
                   <div class="image-box">
                     {% if meta_featured != blank %}
-                      <img src="{{ meta_featured | image_url: width: 600 }}" alt="{{ product.title }}">
+                      <img src="{{ meta_featured | image_url: width: 600 }}" alt="{{ product.title }}" loading="lazy" >
                       <span class="food-box-shadow"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/box-shadow.webp"></span>
                     {% else %}
-                      <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title }}">
+                      <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title }}" loading="lazy">
                     {% endif %}
 
                     <span class="palm-shape"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/palm-shape.webp"></span>
                     {% if meta_fruit != blank %}
                       <span class="food-shadow"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/food-shadow.webp"></span>
                       <span class="cream-flavour">
-                        <img src="{{ meta_fruit | image_url: width: 600 }}" alt="{{ product.title }}">
+                        <img src="{{ meta_fruit | image_url: width: 600 }}" alt="{{ product.title }}" loading="lazy">
                       </span>
                     {% endif %}   
                   </div>
