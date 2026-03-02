@@ -1,7 +1,6 @@
 {% comment %} 
   Hero Section with Video Background and Decorative Fruit Images 
 {% endcomment %}
-
 <section class="hero-area {% if section.settings.add_custom_class %}hero-no-anim{% endif %} pb-0">
   {% if section.settings.video_url != blank %}
     <video 
@@ -17,7 +16,6 @@
       <source src="{{ section.settings.video_url }}" type="video/mp4">
     </video>
   {% endif %}
-
   <div class="hero-inner-text">
     <div class="container">
       <div class="hero-text text-center">
@@ -38,45 +36,37 @@
       </div>
     </div>
   </div>
-
   <div class="hero-inner-image">
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <div class="hero-imege">
             {% if section.settings.desktop_image or section.settings.mobile_image %}
-
               <picture>
                 <source media="(min-width: 1024px)" srcset="{{ section.settings.desktop_image | image_url: width: 1920 }}">
                 <img 
                   alt='Islandway Background' 
                   src="{{ section.settings.mobile_image | image_url: width: 768 }}" 
                   loading="lazy"
-                  fetchpriority="high"
                   decoding="async">
-
               </picture>
             {% endif %}
-
           </div>
         </div>
       </div>
     </div>
   </div>
-
   {% if section.settings.left_palm != blank %}
     <span class="hero-palm-left">
       <img src="{{ section.settings.left_palm | image_url }}" alt="left palm">
     </span>
   {% endif %}
-
   {% if section.settings.right_palm != blank %}
     <span class="hero-palm-right">
       <img src="{{ section.settings.right_palm | image_url }}" alt="right palm">
     </span>
   {% endif %}
 </section>
-
 {% schema %}
   {
     "name": "Hero Section",
