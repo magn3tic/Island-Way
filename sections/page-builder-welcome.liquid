@@ -1,0 +1,180 @@
+<div class="group_section_bg">
+  {% assign slider_open = false %}
+  {% for block in section.blocks %}
+    {% case block.type %}
+
+      {% when 'about' %}
+        <section class="content-area about">
+           <span class="about-palm-left"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/about-palm-left.webp" alt="image"></span>
+           <span class="about-palm-right"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/about-palm-right.webp" alt="image"></span>
+
+          <div class="container">
+            <div class="row align-items-lg-center">
+              <div class="col-lg-6 col-sm-6 order-lg-1 order-2">
+                <div class="content-image about">
+                  <div class="reveal">
+                    {% if block.settings.about_image %}
+                      <img src="{{ block.settings.about_image | image_url }}" alt="image">
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-5 col-sm-6 order-lg-2 order-1 ms-auto">
+                <div class="section-heading">
+                  {% if block.settings.about_subheading %}
+                    <span class="title text_white">{{ block.settings.about_subheading }}</span>
+                  {% endif %}
+                  {% if block.settings.about_heading %}
+                    <h2 class="heading text_white">{{ block.settings.about_heading }}</h2>
+                  {% endif %}
+                </div>
+
+                <div class="content-text about text_white">
+                  {{ block.settings.about_text }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      {% when 'product_slider' %}
+        {% unless slider_open %}
+          <section class="content-area pt-0">
+            <div class="product-slider">
+          {% assign slider_open = true %}
+        {% endunless %}
+
+      {% when 'product_slide' %}
+        {% if slider_open %}
+          <div class="slide">
+            <span class="product-image">
+              <img src="{{ block.settings.slide_image | image_url: width: 900 }}" alt="product">
+            </span>
+          </div>
+        {% endif %}
+
+      {% when 'sustainability' %}
+        {% if slider_open %}
+            </div>
+          </section>
+          {% assign slider_open = false %}
+        {% endif %}
+
+        <section class="content-area feature-bg pb-0">
+          <div class="feature-bg"></div>
+            <span class="feature-left-food"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/hand-food-left.webp" alt="img"></span>
+            <span class="feature-right-food d-none d-sm-block"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/hand-food-right.webp" alt="img"></span>
+            <span class="feature-right-food d-sm-none"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/hand-food-right-mobile.webp" alt="img"></span>
+
+          <div class="container">
+            <div class="feature-text">
+              <div class="row align-items-end">
+                <div class="col-lg-6">
+                  <div class="section-heading">
+                    {% if block.settings.sustain_subheading %}
+                      <span class="title text_white">{{ block.settings.sustain_subheading }}</span>
+                    {% endif %}
+                    {% if block.settings.sustain_heading %}
+                      <h2 class="heading text_white">{{ block.settings.sustain_heading }}</h2>
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="content-text text_white">
+                    {{ block.settings.sustain_text }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-bottom-bg">
+              <img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/feature-bg.webp" alt="image">
+          </div>
+        </section>
+
+    {% endcase %}
+  {% endfor %}
+
+</div>
+
+{% schema %}
+{
+  "name": "Welcome Section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "about",
+      "name": "About Section",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "about_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "about_subheading",
+          "label": "Subheading",
+          "default": "The Island Way"
+        },
+        {
+          "type": "text",
+          "id": "about_heading",
+          "label": "Heading",
+          "default": "WELCOME TO THE ISLAND"
+        },
+        {
+          "type": "richtext",
+          "id": "about_text",
+          "label": "About Text",
+          "default": "<p>Island Way fruits are hand-picked, hand-carved, and hand-crafted into our sorbet.</p>"
+        }
+      ]
+    },
+    {
+      "type": "product_slider",
+      "name": "Product Slider",
+      "settings": []
+    },
+    {
+      "type": "product_slide",
+      "name": "Product Slide",
+      "settings": [
+        { "type": "image_picker", "id": "slide_image", "label": "Slide Image" }
+      ]
+    },
+    {
+      "type": "sustainability",
+      "name": "Sustainability Section",
+      "settings": [
+        {
+          "type": "text",
+          "id": "sustain_subheading",
+          "label": "Subheading",
+          "default": "Sustainability"
+        },
+        {
+          "type": "text",
+          "id": "sustain_heading",
+          "label": "Heading",
+          "default": "Nature knows best"
+        },
+        {
+          "type": "richtext",
+          "id": "sustain_text",
+          "label": "Content",
+          "default": "<p>That’s why we handcraft our sorbets...</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Welcome Section",
+      "category": "Content"
+    }
+  ]
+}
+{% endschema %}

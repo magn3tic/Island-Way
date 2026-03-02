@@ -1,0 +1,100 @@
+<section class="content-area package-area bg_brown relative">
+    <img class="social-palm-left" src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/social-palm-left.webp" alt="image">
+    <img class="social-palm-right" src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/social-palm-right.webp" alt="image">
+
+  <div class="container">
+    <div class="package-slider-top text-center">
+      {% if section.settings.heading %}
+        <h2 class="heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+      <ul class="social-links">
+        {% if section.settings.facebook_link != blank %}
+          <li><a href="{{ section.settings.facebook_link }}" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+        {% endif %}
+        {% if section.settings.tiktok_link != blank %}
+          <li><a href="{{ section.settings.tiktok_link }}" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
+        {% endif %}
+        {% if section.settings.instagram_link != blank %}
+          <li><a href="{{ section.settings.instagram_link }}" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+        {% endif %}
+          {% if section.settings.yt_link != blank %}
+            <li>
+              <a href="{{ section.settings.yt_link }}" target="_blank">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </li>
+          {% endif %}         
+      </ul>
+    </div>
+  </div>
+
+  <div class="package-slider">
+  {% for block in section.blocks %}
+    {% assign rotation_check = forloop.index0 | modulo: 2 %}
+    {% assign rotation_class = 'left-rotate' %}
+    {% if rotation_check == 1 %}
+      {% assign rotation_class = 'right-rotate' %}
+    {% endif %}
+
+    <div class="slide">
+      <div class="package-slider-box {{ rotation_class }}">
+        {% if block.settings.image != blank %}
+          <img src="{{ block.settings.image | image_url }}" alt="slide image">
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Social Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "FOLLOW US<br> TO PARADISE"
+    },
+    {
+      "type": "url",
+      "id": "facebook_link",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "url",
+      "id": "tiktok_link",
+      "label": "TikTok URL"
+    },
+    {
+      "type": "url",
+      "id": "instagram_link",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "yt_link",
+      "label": "Youtube URL"
+    }    
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Slide Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Social Section"
+    }
+  ]
+}
+{% endschema %}

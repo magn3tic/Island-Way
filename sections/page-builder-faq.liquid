@@ -1,0 +1,84 @@
+<section class="content-area pt-0 bg_blue relative">
+    <img class="faq-palm-left" src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/store-shape.webp" alt="image">
+    <img class="faq-palm-right" src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/service-palmr.webp" alt="image">
+
+  <div class="container narrow faq-bg-shape">
+    {% if section.settings.cta_label != blank %}
+      <div class="faq-action-top text-center">
+        <a href="{{ section.settings.cta_link }}" class="cta-btn btn_orange">
+          {{ section.settings.cta_label }}
+        </a>
+      </div>
+    {% endif %}
+
+    <div class="faq-accordion" id="accordionExample">
+      {% for block in section.blocks %}
+        {% assign collapse_id = 'collapse-' | append: block.id %}
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <button class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#{{ collapse_id }}"
+              aria-expanded="false"
+              aria-controls="{{ collapse_id }}">
+              {{ block.settings.question }}
+              <em class="fa-solid fa-chevron-down"></em>
+            </button>
+          </div>
+          <div id="{{ collapse_id }}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <div class="short-content">
+                {{ block.settings.answer }}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Top Button Label",
+      "default": "FIND AN ISLAND WAY Retailer NEAR YOU"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Top Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "What is Island Way Sorbet?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Island Way Sorbet is a premium, all-natural fruit sorbet with a touch of cream served in real fruit shells such as coconut, orange, and pineapple.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Section"
+    }
+  ]
+}
+{% endschema %}        

@@ -1,0 +1,175 @@
+<!-- Content Start -->
+<section class="content-area bg_blue other-product" id="related-products-{{ section.id }}">
+  {% if section.settings.enable_shape %}
+    <img class="other-product-shape" src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/service-palmr.webp" alt="image">
+  {% endif %}
+
+  <div class="container">
+    {% if section.settings.heading != blank %}
+      <div class="section-heading text-center">
+        <h2 class="heading">{{ section.settings.heading }}</h2>
+      </div>
+    {% endif %}
+
+    <div class="three-column-slider">
+      {% if recommendations.performed and recommendations.products_count > 0 %}
+        {% assign products_to_show = recommendations.products %}
+      {% else %}
+        {% assign products_to_show = collections.all.products | sample: section.settings.products_to_show %}
+      {% endif %}
+
+      {% for product in products_to_show %}
+      {% assign availability_text = product.metafields.custom.availability.value | default: '' %}
+
+        <div class="slide">
+          <a href="{{ product.url }}" class="product-box et-js-tilt">
+            <div class="image-box">
+              <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title }}">
+              <span class="palm-shape"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/palm-shape.webp" alt="image"></span>
+
+              {% if product.metafields.custom.fruit_image != blank %}
+                <span class="cream-flavour">
+                  <img src="{{ product.metafields.custom.fruit_image | image_url }}" alt="{{ product.title }} flavor">
+                </span>
+              {% endif %}
+            </div>
+
+            <div class="text-box">
+              <h3 class="title">{{ product.title }}</h3>
+
+              {% if product.metafields.custom.meta_info != blank %}
+                <ul>
+                  {% assign parts = product.metafields.custom.meta_info.value %}
+                  {% for part in parts %}
+                    <li>{{ part }}</li>
+                    {% unless forloop.last %}<li>|</li>{% endunless %}
+                  {% endfor %}
+                </ul>
+              {% endif %}
+
+              <div class="price-ratting">
+                       {% if availability_text == 'Available Online'  %} 
+                      <span class="price-text">{{ product.price | money }}</span>
+                    {% endif %} 
+                  <span class="ratting-text">
+                  <div class="review-stars">
+                    <div class="jdgm-widget jdgm-preview-badge" data-id="{{ product.id }}"></div>
+                  </div>
+                </span>
+              </div>
+
+              {% assign availability_text = '' %}
+
+              {%- if product.metafields.custom.availability -%}
+                {%- if product.metafields.custom.availability.value -%}
+                  {%- assign availability_text = product.metafields.custom.availability.value | strip -%}
+                {%- else -%}
+                  {%- assign availability_text = product.metafields.custom.availability | strip -%}
+                {%- endif -%}
+              {%- endif -%}
+
+              {% if availability_text == 'Available Online' %}
+                <span class="cta-btn">ADD TO CART</span>
+              {% elsif availability_text == 'In-Store Only' %}
+                <span class="cta-btn alt">Available in store</span>
+              {% else %}
+                <span class="cta-btn alt">Available in store</span>
+              {% endif %}
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if section.settings.button_label != blank %}
+      <div class="product-action text-center">
+        <a href="{{ section.settings.button_link }}" class="cta-btn btn_orange action">
+          {{ section.settings.button_label }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+<!-- Content End -->
+
+{% if request.page_type == 'product' %}
+<script>
+  async function loadRelatedProducts_{{ section.id }}() {
+    const sectionId = '{{ section.id }}';
+    const baseUrl = '{{ routes.product_recommendations_url }}';
+    const productId = {{ product.id }};
+    const limit = {{ section.settings.products_to_show }};
+    const intent = 'related';
+    const url = `${baseUrl}?section_id=${sectionId}&product_id=${productId}&limit=${limit}&intent=${intent}`;
+
+    try {
+      const response = await fetch(url);
+      if (!response.ok) return;
+      const html = await response.text();
+      const container = document.querySelector('#related-products-{{ section.id }}');
+      if (container) {
+        container.outerHTML = html;
+
+        function initJudgeMeBadges(retries = 10) {
+          if (window.jdgm && typeof window.jdgm.initBadgeEls === 'function') {
+            window.jdgm.initBadgeEls();
+          } else if (retries > 0) {
+            setTimeout(() => initJudgeMeBadges(retries - 1), 300);
+          }
+        }
+        initJudgeMeBadges();
+      }
+    } catch (error) {
+      console.error('Error loading related products:', error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadRelatedProducts_{{ section.id }});
+  document.addEventListener('shopify:section:load', loadRelatedProducts_{{ section.id }});
+</script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Related Products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Try our other flavors"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_shape",
+      "label": "Enable Background Shape",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "label": "Number of products to show",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "EXPLORE ALL FLAVOURS"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Related Products"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,129 @@
+<section class="content-area bg_brown contact-bg-shape">
+    <img class="contact-palm-left" src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/product-details-palm.webp" alt="image">
+    <img class="contact-palm-right" src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/product-right.webp" alt="image">
+
+  <div class="container narrow contact-area">
+    <div class="content-text contact-text text-center">
+      {% if section.settings.heading != blank %}
+        <h2 class="heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <p>{{ section.settings.description }}</p>
+      {% endif %}
+      {% if section.settings.email != blank %}
+        <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a>
+      {% endif %}
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+      {%- form 'contact', id: 'ContactForm', class: 'contact-form' -%}
+        <ul class="row">
+          <li class="col-sm-6">
+            <label for="ContactFormName">Name</label>
+            <input id="ContactFormName" type="text" name="contact[name]" placeholder="Name" required>
+          </li>
+          <li class="col-sm-6">
+            <label for="ContactFormEmail">Email</label>
+            <input id="ContactFormEmail" type="email" name="contact[email]" placeholder="Email" required>
+          </li>
+          <li class="col-sm-12">
+            <label for="ContactFormPhone">Phone Number</label>
+            <input id="ContactFormPhone" type="tel" name="contact[phone]" placeholder="Phone Number">
+          </li>
+          <li class="col-sm-12">
+            <label for="ContactFormTopic">Query Type</label>
+            <select id="ContactFormTopic" name="contact[topic]">
+              <option value="">Select a topic</option>
+              <option value="Product Inquiry">Product Inquiry</option>
+              <option value="Wholesale">Wholesale</option>
+              <option value="Online Order">Online Order</option>
+              <option value="Other">Other</option>
+            </select>
+          </li>
+          <li class="col-sm-12">
+            <label for="ContactFormLocation">Location</label>
+            <input id="ContactFormLocation" type="text" name="contact[location]" placeholder="City, State, Province">
+          </li>
+          <li class="col-sm-12">
+            <label for="ContactFormMessage">Message</label>
+            <textarea id="ContactFormMessage" name="contact[body]" placeholder="Message" required></textarea>
+          </li>
+        </ul>
+        <div class="text-center">
+          <button type="submit" class="cta-btn btn_blue">Send<span></span></button>
+        </div>
+
+        {% if form.posted_successfully? %}
+          <p class="form-success text-center">Thank you! Your message has been sent.</p>
+        {% endif %}
+      {%- endform -%}
+    </div>
+
+    <!-- Contact Info Boxes -->
+    <div class="contact-text-box">
+      <div class="row g-lg-5 g-3">
+        {% for block in section.blocks %}
+          <div class="col-sm-6">
+            <a href="mailto:{{ block.settings.email }}" class="content-box text-center et-js-tilt">
+              <span class="title">{{ block.settings.title }}</span>
+              <h3 class="post">{{ block.settings.email }}</h3>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Connect with Us"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Whether you’re a curious customer tasting your way through our flavors, a retail partner thinking of bringing Island Way to your shelves, or someone wanting to know more about our hand-crafted frozen treats, drop us a message. We’d love to hear from you."
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Top Contact Email",
+      "default": "info@islandway.com"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "contact_box",
+      "name": "Contact Box",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Box Title",
+          "default": "General support, consumer inquiries"
+        },
+        {
+          "type": "text",
+          "id": "email",
+          "label": "Email",
+          "default": "info@islandway.com"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact Section",
+      "category": "Contact"
+    }
+  ]
+}
+{% endschema %}        

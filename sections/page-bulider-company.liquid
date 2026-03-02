@@ -1,0 +1,49 @@
+<section class="{% if section.settings.enable_shape %}content-area company-slider-alt relative{% else %}company-slider-area{% endif %} bg_blue pt-0">
+  <div class="company-slider">
+    {% for block in section.blocks %}
+      {% if block.settings.logo != blank %}
+        <div class="slide">
+          <div class="company-logo">
+            <img src="{{ block.settings.logo | image_url }}" alt="{{ block.settings.logo.alt | default: 'Company logo' }}">
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% if section.settings.enable_shape %}
+    <img class="company-slider-shape" src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/feature-bg.webp" alt="background shape">
+  {% endif %}  
+</section>
+
+{% schema %}
+{
+  "name": "Logos Section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_shape",
+      "label": "Enable Background Shape",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logos Section"
+    }
+  ]
+}
+{% endschema %}

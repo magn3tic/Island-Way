@@ -1,0 +1,167 @@
+{% comment %}
+Custom Header Section
+{% endcomment %}
+
+<header 
+  class="header-area {% unless template.name == 'index' %}product-header{% endunless %}"
+>
+  {% unless template.name == 'index' %}
+    <!-- Non-homepage palm/background visuals -->
+    <span class="hero-palm-left">
+      <img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/left_palms.webp" alt="image">
+    </span>
+    <span class="hero-palm-right">
+      <img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/right_palms.webp" alt="image">
+    </span>
+    <img class="product-header-bg" src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/header-bg.webp" alt="image">
+  {% endunless %}
+
+  <div class="container">
+    <div class="header-inner">
+
+      <!-- Desktop Navigation -->
+      <div class="header-link d-none d-lg-block">
+        <nav>
+          <ul class="top-menu">
+            {% for link in section.settings.menu.links %}
+              <li class="menu-item {% if link.links != blank %}has-submenu{% endif %}">
+                <a href="{{ link.url }}" {% if link.current %}aria-current="page"{% endif %}>
+                  {{ link.title }}
+                </a>
+
+                {% if link.links != blank %}
+                  <ul class="submenu">
+                    {% for child_link in link.links %}
+                      <li>
+                        <a href="{{ child_link.url }}" {% if child_link.current %}aria-current="page"{% endif %}>
+                          {{ child_link.title }}
+                        </a>
+
+                        {% if child_link.links != blank %}
+                          <ul class="sub-submenu">
+                            {% for grandchild_link in child_link.links %}
+                              <li>
+                                <a href="{{ grandchild_link.url }}" {% if grandchild_link.current %}aria-current="page"{% endif %}>
+                                  {{ grandchild_link.title }}
+                                </a>
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Logo -->
+      <div class="header-logo">
+        <a href="{{ routes.root_url }}">
+          {% if section.settings.logo != blank %}
+            <img src="{{ section.settings.logo | img_url: '200x' }}" alt="{{ section.settings.logo.alt | default: shop.name }}">
+          {% else %}
+            {{ shop.name }}
+          {% endif %}
+        </a>
+      </div>
+
+      <!-- Header Icons -->
+      <div class="header-menu">
+        <ul>
+          <li>
+            <a href="{{ section.settings.store_button_link }}" class="header-btn">
+              {{ section.settings.store_button_label }}
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;" class="search-toggle">
+              <img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/search.webp" alt="search icon">
+            </a>
+          </li>
+          <li>
+            <a 
+              class="cart-link" 
+              href="#offcanvas-cart" 
+              data-bs-toggle="offcanvas" 
+              aria-controls="offcanvas-cart" 
+              aria-label="{{ 'general.accessibility.cart' | t }} {{ cart.item_count }}"
+              role="button">
+              <img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/cart.webp" alt="cart icon">
+              {% render 'cart-count-badge' %}
+            </a>              
+          </li>
+          <li>
+            {% if customer %}
+              <a href="{{ routes.account_url }}">
+                <img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/profile.webp" alt="profile icon">
+              </a>
+            {% else %}
+              <a href="{{ routes.account_login_url }}">
+                <img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/profile.webp" alt="profile icon">
+              </a>
+            {% endif %}
+          </li>
+        </ul>
+        <div id="menu-toggle">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mainmenu d-lg-none">
+    <nav id="menu">
+      <ul>
+        {% for link in section.settings.menu.links %}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+      <div class="mobile-menu">
+        <a href="{{ section.settings.store_button_link }}" class="cta-btn btn_default">{{ section.settings.store_button_label }}</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Search -->
+{% render 'header-search', input_id: 'HeaderSearchInput' %}
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Main Menu"
+    },
+    {
+      "type": "text",
+      "id": "store_button_label",
+      "label": "Store Button Label",
+      "default": "FIND IN STORES"
+    },
+    {
+      "type": "url",
+      "id": "store_button_link",
+      "label": "Store Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Header"
+    }
+  ]
+}
+{% endschema %}

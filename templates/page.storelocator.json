@@ -1,0 +1,105 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "store_builder_store_N8gXj8": {
+      "type": "store-builder-store",
+      "name": "Store Locator",
+      "settings": {
+        "style": "style_one",
+        "heading": "Store Locator",
+        "subtext": "Looking for an escape to a tropical taste paradise?<br> There’s an Island Way retailer near you.",
+        "bg_shape": "shopify://shop_images/store-shape.webp",
+        "sign_img": "shopify://shop_images/paradise_sign.webp",
+        "tree_img": "shopify://shop_images/connection-tree.webp",
+        "video_bg": "",
+        "map_iframe": "<div id=\"pear-map-target\" class=\"store-locator lrg\"></div>\n<script type=\"text/javascript\"> (function(e) {s=document.createElement(\"script\"),s.type=\"text/javascript\",s.src=\"https://offers.pearcommerce.com/js/sdk.js?config=\"+encodeURIComponent(JSON.stringify(e)),document.head.appendChild(s)}) ({vendorId:'2667515213543393', widget:'product-locator'}) </script>"
+      }
+    },
+     "page_bulider_company_QPUyMK": {
+      "type": "page-bulider-company",
+      "blocks": {
+        "logo_UejjFh": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/b9fe9d4f8eef2a0406a6edbb4ff6c75615d023ee.webp"
+          }
+        },
+        "logo_yfyHEx": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/35a0cb5619e2f653471cb08d20a092e16bcf3df3.webp"
+          }
+        },
+        "logo_HP6GeR": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/03f1c966b5aebcbcd2a1aaea366f82733cd7879e.webp"
+          }
+        },
+        "logo_yqpmkr": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Wegmans-logo.png"
+          }
+        },
+        "logo_TwqadH": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/krogers-logo.png"
+          }
+        },
+        "logo_BKhQbK": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/b9fe9d4f8eef2a0406a6edbb4ff6c75615d023ee.webp"
+          }
+        },
+        "logo_XdVhX6": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/35a0cb5619e2f653471cb08d20a092e16bcf3df3.webp"
+          }
+        },
+        "logo_tpMFAG": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/03f1c966b5aebcbcd2a1aaea366f82733cd7879e.webp"
+          }
+        },
+        "logo_BCq7gh": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Wegmans-logo.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_UejjFh",
+        "logo_yfyHEx",
+        "logo_HP6GeR",
+        "logo_yqpmkr",
+        "logo_TwqadH",
+        "logo_BKhQbK",
+        "logo_XdVhX6",
+        "logo_tpMFAG",
+        "logo_BCq7gh"
+      ],
+      "name": "Logos Section",
+      "settings": {
+        "enable_shape": false
+      }
+    },
+  },
+  "order": [
+    "store_builder_store_N8gXj8",
+    "page_bulider_company_QPUyMK"
+  ]
+}

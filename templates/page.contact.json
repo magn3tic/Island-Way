@@ -1,0 +1,285 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page_builder_contact_x9gXDh": {
+      "type": "page-builder-contact",
+      "blocks": {
+        "contact_box_n8reff": {
+          "type": "contact_box",
+          "settings": {
+            "title": "General support, <br>consumer inquiries",
+            "email": "info@islandway.com"
+          }
+        },
+        "contact_box_VWLeeQ": {
+          "type": "contact_box",
+          "settings": {
+            "title": "Online purchases, <br>US only",
+            "email": "weborders@islandway.com"
+          }
+        },
+        "contact_box_xjanTp": {
+          "type": "contact_box",
+          "settings": {
+            "title": "Wholesale inquires, B2B questions",
+            "email": "sales@islandway.com"
+          }
+        },
+        "contact_box_CGNGFA": {
+          "type": "contact_box",
+          "settings": {
+            "title": "International",
+            "email": "international@islandway.com"
+          }
+        }
+      },
+      "block_order": [
+        "contact_box_n8reff",
+        "contact_box_VWLeeQ",
+        "contact_box_xjanTp",
+        "contact_box_CGNGFA"
+      ],
+      "name": "Contact Section",
+      "settings": {
+        "heading": "Connect with Us",
+        "description": "Whether you’re a curious customer tasting your way through our flavors, a retail partner thinking of bringing Island Way to your shelves, or someone wanting to know more about our hand-crafted frozen treats, drop us a message. We’d love to hear from you.",
+        "email": "info@islandway.com"
+      }
+    },
+    "page_builder_faq_ci7pEw": {
+      "type": "page-builder-faq",
+      "blocks": {
+        "faq_PCfkDh": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Island Way Sorbet?",
+            "answer": "<p>Island Way sorbet is a premium, all-natural fruit sorbet with a touch of cream served in real fruit shells such as coconut, orange, pineapple, and more. It’s a refreshing dessert perfect for any occasion.</p>"
+          }
+        },
+        "faq_XBnDhn": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Island Way Sorbets dairy-free?",
+            "answer": "<p>Our sorbets contain dairy. We start with a traditional sorbet recipe that’s gluten-free and cholesterol-free, making them a refreshing choice for a variety of dietary lifestyles.</p>"
+          }
+        },
+        "faq_zN7DrC": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you offer dairy-free flavors?",
+            "answer": "<p>Yes. Our Tropical Mango flavor is dairy-free. You can find it in single-flavor packs and as part of our variety pack assortments.<br/><br/><br/></p>"
+          }
+        },
+        "faq_9w794g": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Island Way products contain allergens?",
+            "answer": "<p>Island Way sorbets contain milk. Please read the ingredient statement carefully on the back of each product if you have any allergen concerns. For specific questions about a product or the facility in which it was produced, please contact our Customer Care team at <a href=\"mailto:info@islandway.com\">info@islandway.com</a>.</p>"
+          }
+        },
+        "faq_jc7i6p": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Island Way gluten-free?",
+            "answer": "<p>Yes. All Island Way products are certified gluten-free by the GFCO. Please read the ingredient statement carefully on the back of each product if you have any allergen concerns.<br/></p>"
+          }
+        },
+        "faq_JbreWB": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Island Way kosher?",
+            "answer": "<p>Yes. All products are certified kosher by the Orthodox Union. Our sorbets are OU-D certified.<br/></p>"
+          }
+        },
+        "faq_yaTUeK": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Island Way non-GMO?",
+            "answer": "<p>Yes. Island Way uses non-GMO ingredients.<br/></p>"
+          }
+        },
+        "faq_PPHHHp": {
+          "type": "faq",
+          "settings": {
+            "question": "Do Island Way sorbets use milk that is free of added hormones and antibiotics?",
+            "answer": "<p>Yes. We use rBST-free milk and cream in products that contain dairy.<br/><br/></p>"
+          }
+        },
+        "faq_F4cMG7": {
+          "type": "faq",
+          "settings": {
+            "question": "Does Island Way contain nuts?",
+            "answer": "<p>No. Island Way products are nut-free. Nuts are not present in our facility, as we do not manufacture any products that contain nuts. Please read the ingredient statement carefully on the back of each product if you have any allergen concerns.</p>"
+          }
+        },
+        "faq_km7nz7": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I recycle your packaging?",
+            "answer": "<p>Yes. Island Way cartons and plastic films are recyclable. The real fruit shells are compostable.</p>"
+          }
+        },
+        "faq_dAAUYb": {
+          "type": "faq",
+          "settings": {
+            "question": "How should I store Island Way Sorbet?",
+            "answer": "<p>Keep sorbets frozen at all times until ready to serve. Store at 0°F (-18°C) or below for best quality.</p>"
+          }
+        },
+        "faq_hQGMpw": {
+          "type": "faq",
+          "settings": {
+            "question": "Do I need to thaw before eating?",
+            "answer": "<p>For the best texture and flavor, allow sorbets to thaw for 2–3 minutes at room temperature before enjoying.</p>"
+          }
+        },
+        "faq_iDn8gB": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I eat the fruit shell?",
+            "answer": "<p>No. While technically edible, the shell is mostly decorative and not intended to be eaten. Most people choose to discard it.</p>"
+          }
+        },
+        "faq_NgJJak": {
+          "type": "faq",
+          "settings": {
+            "question": "Where can I buy Island Way Sorbet?",
+            "answer": "<p>You can find Island Way Sorbet at select grocery stores, wholesale clubs, restaurants, and resorts across the U.S. and internationally. Availability varies by region.</p>"
+          }
+        },
+        "faq_BXVFeX": {
+          "type": "faq",
+          "settings": {
+            "question": "I can’t find a new flavor I saw online. where can I purchase it?",
+            "answer": "<p>Please check <a href=\"/pages/stores\" title=\"STORE LOCATOR\">our store locator</a> for the most up-to-date information on product availability.</p>"
+          }
+        },
+        "faq_UwyffJ": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I order Island Way Sorbet online?",
+            "answer": "<p>Yes. We offer four flavors shipped in bulk: Heavenly Coconut, Pomegranate Lemon, Passionate Mango, and Red Berry & Ruby Grapefruit. Each order is shipped in a cooler with dry ice to maintain product quality during transit. Please refer to our flavor list for more details.</p>"
+          }
+        },
+        "faq_J8MWiX": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Island Way available internationally?",
+            "answer": "<p>Yes. We proudly offer our products worldwide. Island Way is sold in the U.S., Canada, the Middle East, Australia, Japan, and many other markets. For more information on international wholesale opportunities, please contact <a href=\"mailto:sales@islandway.com\">sales@islandway.com</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_PCfkDh",
+        "faq_XBnDhn",
+        "faq_zN7DrC",
+        "faq_9w794g",
+        "faq_jc7i6p",
+        "faq_JbreWB",
+        "faq_yaTUeK",
+        "faq_PPHHHp",
+        "faq_F4cMG7",
+        "faq_km7nz7",
+        "faq_dAAUYb",
+        "faq_hQGMpw",
+        "faq_iDn8gB",
+        "faq_NgJJak",
+        "faq_BXVFeX",
+        "faq_UwyffJ",
+        "faq_J8MWiX"
+      ],
+      "name": "FAQ Section",
+      "settings": {
+        "cta_label": "FIND AN ISLAND WAY Retailer NEAR YOU",
+        "cta_link": "shopify://pages/stores"
+      }
+    },
+     "page_bulider_company_QPUyMK": {
+      "type": "page-bulider-company",
+      "blocks": {
+        "logo_UejjFh": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/b9fe9d4f8eef2a0406a6edbb4ff6c75615d023ee.webp"
+          }
+        },
+        "logo_yfyHEx": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/35a0cb5619e2f653471cb08d20a092e16bcf3df3.webp"
+          }
+        },
+        "logo_HP6GeR": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/03f1c966b5aebcbcd2a1aaea366f82733cd7879e.webp"
+          }
+        },
+        "logo_yqpmkr": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Wegmans-logo.png"
+          }
+        },
+        "logo_TwqadH": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/krogers-logo.png"
+          }
+        },
+        "logo_BKhQbK": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/b9fe9d4f8eef2a0406a6edbb4ff6c75615d023ee.webp"
+          }
+        },
+        "logo_XdVhX6": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/35a0cb5619e2f653471cb08d20a092e16bcf3df3.webp"
+          }
+        },
+        "logo_tpMFAG": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/03f1c966b5aebcbcd2a1aaea366f82733cd7879e.webp"
+          }
+        },
+        "logo_BCq7gh": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Wegmans-logo.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_UejjFh",
+        "logo_yfyHEx",
+        "logo_HP6GeR",
+        "logo_yqpmkr",
+        "logo_TwqadH",
+        "logo_BKhQbK",
+        "logo_XdVhX6",
+        "logo_tpMFAG",
+        "logo_BCq7gh"
+      ],
+      "name": "Logos Section",
+      "settings": {
+        "enable_shape": false
+      }
+    },
+  },
+  "order": [
+    "page_builder_contact_x9gXDh",
+    "page_builder_faq_ci7pEw",
+    "page_bulider_company_QPUyMK"
+  ]
+}

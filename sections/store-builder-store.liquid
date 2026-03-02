@@ -1,0 +1,148 @@
+<!-- Store Locator Section -->
+<section class="content-area bg_blue {% if section.settings.style == 'style_two' %}contact{% else %}store-locator{% endif %}">
+  
+  {% if section.settings.style == 'style_one' %}
+    {% if section.settings.bg_shape %}
+      <img class="store-locator-shape" src="{{ section.settings.bg_shape | image_url }}" alt="background shape">
+    {% endif %}
+
+    <div class="container contact-location">
+      <div class="row">
+        <div class="col-lg-7 col-sm-6">
+          <div class="section-heading text_white contact">
+            {% if section.settings.heading != blank %}
+              <h1 class="heading">{{ section.settings.heading }}</h1>
+            {% endif %}
+            {% if section.settings.subtext != blank %}
+              <p>{{ section.settings.subtext }}</p>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-sm-6">
+          <div class="content-image contact-shape">
+            {% if section.settings.sign_img %}
+              <img class="contact-shape-one" src="{{ section.settings.sign_img | image_url }}" alt="image">
+            {% endif %}
+            {% if section.settings.tree_img %}
+              <img class="contact-shape-two" src="{{ section.settings.tree_img | image_url }}" alt="image">
+            {% endif %}
+            <svg class="contact-connection-dotted" xmlns="http://www.w3.org/2000/svg" width="420" height="107" viewBox="0 0 420 107" fill="none">
+              <path d="M2.5979 3.08154C12.2502 8.01493 17.32 2.3142 63.5145 34.3978C130.222 80.7287 154.654 106.678 231.25 104.109C292.526 102.053 390.228 48.5079 417.646 29.2389" stroke="white" stroke-width="4.2899" stroke-linecap="round" stroke-dasharray="17.16 17.16"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-inner map">
+        {% if section.settings.map_iframe != blank %}
+          {{ section.settings.map_iframe }}
+        {% endif %}
+      </div>
+    </div>
+
+  {% elsif section.settings.style == 'style_two' %}
+    {% if section.settings.video_bg != blank %}
+      <video class="contact-video-bg" autoplay muted loop playsinline poster="{{ section.settings.video_poster | image_url }}">
+        <source src="{{ section.settings.video_bg }}" type="video/mp4">
+      </video>
+    {% endif %}
+
+    <div class="container contact-location">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="section-heading text-sm-start text-center contact">
+            {% if section.settings.heading != blank %}
+              <h2 class="heading">{{ section.settings.heading }}</h2>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="content-image contact-shape">
+            {% if section.settings.sign_img %}
+              <img class="contact-shape-one" src="{{ section.settings.sign_img | image_url }}" alt="img">
+            {% endif %}
+            {% if section.settings.tree_img %}
+              <img class="contact-shape-two" src="{{ section.settings.tree_img | image_url }}" alt="img">
+            {% endif %}
+            <svg class="contact-connection-dotted" xmlns="http://www.w3.org/2000/svg" width="420" height="107" viewBox="0 0 420 107" fill="none">
+              <path d="M2.5979 3.08154C12.2502 8.01493 17.32 2.3142 63.5145 34.3978C130.222 80.7287 154.654 106.678 231.25 104.109C292.526 102.053 390.228 48.5079 417.646 29.2389" stroke="white" stroke-width="4.2899" stroke-linecap="round" stroke-dasharray="17.16 17.16"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="contact-inner map mb_140">
+        {% if section.settings.map_iframe != blank %}
+          {{ section.settings.map_iframe }}
+        {% endif %}
+      </div>
+    </div>
+    <img class="contact-location-shape" src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/feature-bg.webp" alt="image">
+  {% endif %}
+</section>
+<!-- Store Locator End -->
+
+{% schema %}
+{
+  "name": "Store Locator",
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Select Layout Style",
+      "default": "style_one",
+      "options": [
+        { "value": "style_one", "label": "Style One" },
+        { "value": "style_two", "label": "Style Two" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Store Locator"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subheading",
+      "default": "Looking for an escape to a tropical taste paradise?<br>There’s an Island Way retailer near you."
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_shape",
+      "label": "Background Shape Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "sign_img",
+      "label": "Sign Image (Left)"
+    },
+    {
+      "type": "image_picker",
+      "id": "tree_img",
+      "label": "Tree Image (Right)"
+    },
+    {
+      "type": "text",
+      "id": "video_bg",
+      "label": "Video URL (for Style Two)",
+    },
+    {
+      "type": "html",
+      "id": "map_iframe",
+      "label": "Map Embed Code (iframe)",
+      "default": "<iframe class='optanon-category-C0001 pear-iframe' src='https://offers.pearcommerce.com/product-locator/2667515213543393?t=676&offerId=2667515213543393&widgetId=2732024422679548&initialWidth=0&childId=pear-widget-iframe-wrap-2732024422679548&parentTitle=Store%20Locator%20Island%20Way%20Sorbet&parentUrl=https%3A%2F%2Fislandway.com%2Fpages%2Fstore-locator' width='100%' height='600' frameborder='0' allowfullscreen></iframe>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Store Locator",
+      "category": "Contact",
+      "settings": {
+        "style": "style_one"
+      }
+    }
+  ]
+}
+{% endschema %}

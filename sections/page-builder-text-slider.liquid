@@ -1,0 +1,53 @@
+<!-- Content Start -->
+<section class="content-area bg_blue p-0">
+  <div class="product-slider product-text-slider">
+    {% for block in section.blocks %}
+      <div class="slide">
+        {% if block.type == 'text' %}
+          <span class="text">
+            <h3>{{ block.settings.text | escape }}</h3>
+          </span>
+        {% endif %}
+      </div>
+    <div class="slide">
+        <span class="star-logo">
+            <img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/white-star.webp" alt="logo">
+        </span>
+    </div>  
+    {% endfor %}
+  </div>
+</section>
+<!-- Content End -->
+
+{% schema %}
+{
+  "name": "Product Text Slider",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "creamy"
+        }
+      ]
+    }    
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Product Text Slider",
+      "blocks": [
+        { "type": "text", "settings": { "text": "creamy" } },
+        { "type": "text", "settings": { "text": "indulgent" } },
+        { "type": "text", "settings": { "text": "smooth" } },
+        { "type": "text", "settings": { "text": "natural" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

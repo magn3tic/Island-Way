@@ -1,0 +1,259 @@
+<!-- Content Start -->
+<section class="content-area bg_blue product-all bg_brown">
+            <span class="product-palm-right"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/product-right.webp" alt="img"></span>
+            <span class="product-palm-left"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/product-all-palm.webp" alt="img"></span>
+
+  <div class="container">
+    {% if section.settings.title != blank or section.settings.heading != blank %}
+      <div class="section-heading text-center">
+        {% if section.settings.title != blank %}
+          <span class="title">{{ section.settings.title }}</span>
+        {% endif %}
+        {% if section.settings.heading != blank %}
+          <h2 class="heading">{{ section.settings.heading }}</h2>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% assign source_collection = collections[section.settings.collection] %}
+    {% assign products_all = source_collection.products | default: collections.all.products %}
+
+    <ul class="product-nav nav-tabs" id="productTabs-{{ section.id }}" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-all-{{ section.id }}" type="button">ALL</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-online-{{ section.id }}" type="button">ONLINE</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-store-{{ section.id }}" type="button">IN STORE</button>
+      </li>
+    </ul>
+
+    <div class="tab-content" id="tabContent-{{ section.id }}">
+
+      <!-- ALL PRODUCTS -->
+      <div class="tab-pane fade show active" id="tab-all-{{ section.id }}">
+        <div class="row">
+        {% for product in products_all %}
+            {% assign availability_text = product.metafields.custom.availability.value | default: '' %}
+            {% assign meta_featured = product.metafields.custom.custom_featured_image %}
+            {% assign meta_fruit = product.metafields.custom.fruit_image %}
+
+            <div class="col-lg-4 col-sm-6">
+              <a href="{{ product.url }}" class="product-box et-js-tilt">
+                <div class="image-box">
+                  {% if meta_featured != blank %}
+                    <img src="{{ meta_featured | image_url: width: 600 }}" alt="{{ product.title }}">
+                    <span class="food-box-shadow"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/box-shadow.webp"></span>
+                  {% else %}
+                    <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title }}">
+                  {% endif %}
+
+                  <span class="palm-shape"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/palm-shape.webp"></span>
+                  {% if meta_fruit != blank %}
+                    <span class="food-shadow"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/food-shadow.webp"></span>
+                    <span class="cream-flavour">
+                      <img src="{{ meta_fruit | image_url: width: 600 }}" alt="{{ product.title }}">
+                    </span>
+                  {% endif %}  
+                </div>
+
+                <div class="text-box">
+                  <h3 class="title">{{ product.title }}</h3>
+                  {% if product.metafields.custom.meta_info != blank %}
+                    <ul>
+                      {% assign parts = product.metafields.custom.meta_info.value %}
+                      {% for part in parts %}
+                        <li>{{ part }}</li>
+                        {% unless forloop.last %}<li>|</li>{% endunless %}
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+
+                  <div class="price-ratting">
+                    {% if availability_text == 'Available Online'  %} 
+                      <span class="price-text">{{ product.price | money }}</span>
+                    {% endif %}                    
+                    <span class="ratting-text">
+                      <div class="review-stars">
+                        <div class="jdgm-widget jdgm-preview-badge" data-id="{{ product.id }}"></div>
+                      </div>
+                    </span>
+                  </div>
+
+                  {% if availability_text == 'Available Online' %}
+                    <span class="cta-btn">ADD TO CART</span>
+                  {% else %}
+                    <span class="cta-btn alt">Available in store</span>
+                  {% endif %}
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- ONLINE PRODUCTS -->
+      <div class="tab-pane fade" id="tab-online-{{ section.id }}">
+        <div class="row">
+        {% for product in products_all %}
+            {% assign availability_text = product.metafields.custom.availability.value | default: '' %}
+            {% assign meta_featured = product.metafields.custom.custom_featured_image %}
+            {% assign meta_fruit = product.metafields.custom.fruit_image %}
+
+            {% if availability_text == 'Available Online' %}
+              <div class="col-lg-4 col-sm-6">
+                <a href="{{ product.url }}" class="product-box et-js-tilt">
+                  <div class="image-box">
+                    {% if meta_featured != blank %}
+                      <img src="{{ meta_featured | image_url: width: 600 }}" alt="{{ product.title }}">
+                      <span class="food-box-shadow"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/box-shadow.webp"></span>
+                    {% else %}
+                      <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title }}">
+                    {% endif %}
+
+                    <span class="palm-shape"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/palm-shape.webp"></span>
+                    {% if meta_fruit != blank %}
+                      <span class="food-shadow"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/food-shadow.webp"></span>
+                      <span class="cream-flavour">
+                        <img src="{{ meta_fruit | image_url: width: 600 }}" alt="{{ product.title }}">
+                      </span>
+                    {% endif %}   
+                  </div>
+
+                  <div class="text-box">
+                    <h3 class="title">{{ product.title }}</h3>
+                    {% if product.metafields.custom.meta_info != blank %}
+                      <ul>
+                        {% assign parts = product.metafields.custom.meta_info.value %}
+                        {% for part in parts %}
+                          <li>{{ part }}</li>
+                          {% unless forloop.last %}<li>|</li>{% endunless %}
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+
+                    <div class="price-ratting">
+                    {% if availability_text == 'Available Online' %}
+                      <span class="price-text">{{ product.price | money }}</span>
+                    {% endif %}                         
+                      <span class="ratting-text">
+                        <div class="review-stars">
+                          <div class="jdgm-widget jdgm-preview-badge" data-id="{{ product.id }}"></div>
+                        </div>
+                      </span>
+                    </div>
+
+                    <span class="cta-btn">ADD TO CART</span>
+                  </div>
+                </a>
+              </div>
+            {% endif %}
+          {% endfor %}            
+        </div>
+      </div>
+
+      <!-- IN STORE PRODUCTS -->
+      <div class="tab-pane fade" id="tab-store-{{ section.id }}">
+        <div class="row">
+        {% for product in products_all %}
+            {% assign availability_text = product.metafields.custom.availability.value | default: '' %}
+            {% assign meta_featured = product.metafields.custom.custom_featured_image %}
+            {% assign meta_fruit = product.metafields.custom.fruit_image %}
+
+            {% if availability_text == 'In-Store Only' or availability_text == '' %}
+              <div class="col-lg-4 col-sm-6">
+                <a href="{{ product.url }}" class="product-box et-js-tilt">
+                  <div class="image-box">
+                  {% if meta_featured != blank %}
+                    <img src="{{ meta_featured | image_url: width: 600 }}" alt="{{ product.title }}">
+                    <span class="food-box-shadow"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/box-shadow.webp"></span>
+                  {% else %}
+                    <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title }}">
+                  {% endif %}
+
+                  <span class="palm-shape"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/palm-shape.webp"></span>
+                  {% if meta_fruit != blank %}
+                    <span class="food-shadow"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/food-shadow.webp"></span>
+                    <span class="cream-flavour">
+                      <img src="{{ meta_fruit | image_url: width: 600 }}" alt="{{ product.title }}">
+                    </span>
+                  {% endif %}  
+                  </div>
+
+                  <div class="text-box">
+                    <h3 class="title">{{ product.title }}</h3>
+                    {% if product.metafields.custom.meta_info != blank %}
+                      <ul>
+                        {% assign parts = product.metafields.custom.meta_info.value %}
+                        {% for part in parts %}
+                          <li>{{ part }}</li>
+                          {% unless forloop.last %}<li>|</li>{% endunless %}
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+
+                    <div class="price-ratting">
+                    {% if availability_text == 'Available Online' %}
+                      <span class="price-text">{{ product.price | money }}</span>
+                    {% endif %}                         
+                      <span class="ratting-text">
+                        <div class="review-stars">
+                          <div class="jdgm-widget jdgm-preview-badge" data-id="{{ product.id }}"></div>
+                        </div>
+                      </span>
+                    </div>
+
+                    <span class="cta-btn alt">Available in store</span>
+                  </div>
+                </a>
+              </div>
+            {% endif %}
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Content End -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  if (window.jdgm && typeof window.jdgm.initBadgeEls === 'function') {
+    window.jdgm.initBadgeEls();
+  }
+});
+</script>
+
+{% schema %}
+{
+  "name": "All Products",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Choose Collection",
+      "info": "Leave empty to show all products"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Products Available Online & In-Store"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main Heading",
+      "default": "TRY THEM ALL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "All Products"
+    }
+  ]
+}
+{% endschema %}

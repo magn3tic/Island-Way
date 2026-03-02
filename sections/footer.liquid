@@ -1,0 +1,154 @@
+<footer class="footer-area bg_brown">
+  <div class="container smalls">
+    <div class="row">
+      <!-- Footer Links -->
+      <div class="col-sm-6">
+        <div class="footer-link text-end">
+          <ul>
+            {% for link in linklists[section.settings.footer_menu].links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="col-sm-6">
+        <div class="footer-text">
+          {% if section.settings.newsletter_heading %}
+            <h3 class="heading">{{ section.settings.newsletter_heading }}</h3>
+          {% endif %}
+          {% if section.settings.newsletter_text %}
+            <p>{{ section.settings.newsletter_text }}</p>
+          {% endif %}
+
+          {%- form 'customer', id: 'footer-newsletter', class: 'newsletter-form' -%}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <input type="hidden" name="contact[accepts_marketing]" value="true">
+            <input type="email" name="contact[email]" placeholder="Email" required>
+            <button type="submit">
+              {% if section.settings.arrow_icon %}
+                <img src="{{ section.settings.arrow_icon | image_url }}" alt="Submit">
+              {% else %}
+                <span>→</span>
+              {% endif %}
+            </button>
+            {% if form.posted_successfully? %}
+              <p class="success-msg">Thank you for subscribing!</p>
+            {% endif %}
+          {%- endform -%}
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-logo text-center">
+        {% if section.settings.footer_logo %}
+          <a href="{{ routes.root_url }}"><img src="{{ section.settings.footer_logo | image_url }}" alt="Footer Logo"></a>
+        {% endif %}
+      </div>
+
+      <div class="footer-social text-center">
+        <ul>
+          {% if section.settings.facebook_link != blank %}
+            <li><a href="{{ section.settings.facebook_link }}" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+          {% endif %}
+          {% if section.settings.tiktok_link != blank %}
+            <li><a href="{{ section.settings.tiktok_link }}" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
+          {% endif %}
+          {% if section.settings.instagram_link != blank %}
+            <li><a href="{{ section.settings.instagram_link }}" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+          {% endif %}
+          {% if section.settings.yt_link != blank %}
+            <li>
+              <a href="{{ section.settings.yt_link }}" target="_blank">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </li>
+          {% endif %}         
+        </ul>
+
+        {% if section.settings.copyright_text != blank %}
+          <span class="footer-copyright">
+            {{ section.settings.copyright_text }}
+          </span>
+        {% endif %}
+
+        {% if section.settings.payment_icons %}
+          <span class="payment-method"><img src="{{ section.settings.payment_icons | image_url }}" alt="Payments"></span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <span class="footer-palm-left"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/footer-palm-left.webp" alt="image"></span>
+  <span class="footer-palm-right"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/footer-palm-right.webp" alt="image"></span>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "footer_menu",
+      "label": "Footer Menu"
+    },
+    {
+      "type": "image_picker",
+      "id": "footer_logo",
+      "label": "Footer Logo"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "label": "Newsletter Heading",
+      "default": "JOIN OUR EMAIL LIST"
+    },
+    {
+      "type": "textarea",
+      "id": "newsletter_text",
+      "label": "Newsletter Description",
+      "default": "Come with us on our journey through the Island Way. Be the first to hear about new products, stockists and sale info."
+    },
+    {
+      "type": "url",
+      "id": "facebook_link",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "url",
+      "id": "tiktok_link",
+      "label": "TikTok URL"
+    },
+    {
+      "type": "url",
+      "id": "instagram_link",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "yt_link",
+      "label": "Youtube URL"
+    }, 
+    {
+      "type": "image_picker",
+      "id": "payment_icons",
+      "label": "Payment Icons Image"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright Text",
+      "default": "©2025, Island Way"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer",
+      "category": "Footer"
+    }
+  ]
+}
+{% endschema %}

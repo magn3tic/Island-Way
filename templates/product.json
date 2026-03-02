@@ -1,0 +1,131 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "product-main",
+      "settings": {}
+    },
+    "17600670050fc05e04": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_preview_badge_PrDtGk": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "judge_me_reviews_review_widget_A9k8kF": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_preview_badge_PrDtGk",
+        "judge_me_reviews_review_widget_A9k8kF"
+      ],
+      "settings": {}
+    },
+    "page_builder_related_products_nzNqt8": {
+      "type": "page-builder-related-products",
+      "name": "Related Products",
+      "settings": {
+        "heading": "Try our other flavors",
+        "enable_shape": true,
+        "products_to_show": 3,
+        "button_label": "EXPLORE ALL FLAVOURS",
+        "button_link": "shopify://pages/flavors"
+      }
+    },
+     "page_bulider_company_QPUyMK": {
+      "type": "page-bulider-company",
+      "blocks": {
+        "logo_UejjFh": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/b9fe9d4f8eef2a0406a6edbb4ff6c75615d023ee.webp"
+          }
+        },
+        "logo_yfyHEx": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/35a0cb5619e2f653471cb08d20a092e16bcf3df3.webp"
+          }
+        },
+        "logo_HP6GeR": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/03f1c966b5aebcbcd2a1aaea366f82733cd7879e.webp"
+          }
+        },
+        "logo_yqpmkr": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Wegmans-logo.png"
+          }
+        },
+        "logo_TwqadH": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/krogers-logo.png"
+          }
+        },
+        "logo_BKhQbK": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/b9fe9d4f8eef2a0406a6edbb4ff6c75615d023ee.webp"
+          }
+        },
+        "logo_XdVhX6": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/35a0cb5619e2f653471cb08d20a092e16bcf3df3.webp"
+          }
+        },
+        "logo_tpMFAG": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/03f1c966b5aebcbcd2a1aaea366f82733cd7879e.webp"
+          }
+        },
+        "logo_BCq7gh": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Wegmans-logo.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_UejjFh",
+        "logo_yfyHEx",
+        "logo_HP6GeR",
+        "logo_yqpmkr",
+        "logo_TwqadH",
+        "logo_BKhQbK",
+        "logo_XdVhX6",
+        "logo_tpMFAG",
+        "logo_BCq7gh"
+      ],
+      "name": "Logos Section",
+      "settings": {
+        "enable_shape": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "17600670050fc05e04",
+    "page_builder_related_products_nzNqt8",
+    "page_bulider_company_QPUyMK"
+  ]
+}

@@ -1,0 +1,98 @@
+<!-- Collections List Section -->
+<section class="content-area bg_blue collection-header">
+  <div class="container">
+    <div class="section-heading text-center">
+      <h2 class="heading">
+          {{ collection.title }}
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="content-area">
+  <div class="container">
+    {% render 'collection-filters' %}
+
+    {% paginate collection.products by 16 %}
+      {% if collection.products.size == 0 %}
+        <p class="alert alert-primary text-center">{{ 'collection.empty_html' | t }}</p>
+      {% else %}
+        <div class="row">
+          {% for product in collection.products %}
+             {% assign availability_text = product.metafields.custom.availability.value | default: '' %}
+            <div class="col-lg-4 col-md-6 mb-4">
+              <a href="{{ product.url }}" class="product-box et-js-tilt">
+                <div class="image-box">
+                  <img 
+                    src="{{ product.featured_image | image_url: width: 600 }}" 
+                    alt="{{ product.title | escape }}" 
+                    loading="lazy">
+                  
+                  <span class="palm-shape">
+                    <img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/palm-shape.webp" alt="decorative palm">
+                  </span>
+                </div>
+
+                <div class="text-box">
+                  <h3 class="title">{{ product.title }}</h3>
+
+                  {% if product.metafields.custom.meta_info != blank %}
+                    <ul>
+                      {% assign parts = product.metafields.custom.meta_info.value %}
+                      {% for part in parts %}
+                        <li>{{ part }}</li>
+                        {% unless forloop.last %}<li>|</li>{% endunless %}
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+
+                  <div class="price-ratting">
+                       {% if availability_text == 'Available Online'  %} 
+                      <span class="price-text">{{ product.price | money }}</span>
+                    {% endif %} 
+                    <span class="ratting-text">
+                      <div class="review-stars">
+                        <div class="jdgm-widget jdgm-preview-badge" data-id="{{ product.id }}"></div>
+                      </div>
+                    </span>
+                  </div>
+
+                  {% assign availability_text = product.metafields.custom.availability | metafield_text %}
+                  {% if availability_text == 'Available Online' %}
+                    <span class="cta-btn">ADD TO CART</span>
+                  {% else %}
+                    <span class="cta-btn alt">Available in store</span>
+                  {% endif %}
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="collection-pagination text-center mt-5">
+          {% render 'pagination', paginate: paginate %}
+        </div>
+      {% endif %}
+    {% endpaginate %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection Products",
+  "templates": ["collection"],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_filters",
+      "label": "Show filters",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Products"
+    }
+  ]
+}
+{% endschema %}

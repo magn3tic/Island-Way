@@ -1,0 +1,139 @@
+{% comment %} 
+  Hero Section with Video Background and Decorative Fruit Images 
+{% endcomment %}
+
+<section class="hero-area {% if section.settings.add_custom_class %} hero-no-anim{% endif %} pb-0">
+  {% if section.settings.video_url != blank %}
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="{{ section.settings.poster | image_url: width: 1920 }}">
+      <source src="{{ section.settings.video_url }}" type="video/mp4">
+    </video>
+  {% endif %}
+
+  <div class="hero-inner-text">
+    <div class="container">
+      <div class="hero-text text-center">
+        {% if section.settings.heading != blank %}
+          <h1 class="heading">{{ section.settings.heading }}</h1>
+        {% endif %}
+        {% if section.settings.subheading != blank %}
+          <h2 class="title">{{ section.settings.subheading }}</h2>
+        {% endif %}
+        {% if section.settings.text != blank %}
+          <p>{{ section.settings.text }}</p>
+        {% endif %}
+        {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+          <a href="{{ section.settings.button_link }}" class="cta-btn btn_default">
+            {{ section.settings.button_label }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-inner-image">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="hero-imege">
+            {% if section.settings.desktop_image or section.settings.mobile_image %}
+
+              <picture>
+                <source media="(min-width: 1024px)" srcset="{{ section.settings.desktop_image | image_url: width: 1920 }}">
+                <img alt='Islandway Background' src="{{ section.settings.mobile_image | image_url: width: 768 }}">
+
+              </picture>
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if section.settings.left_palm != blank %}
+    <span class="hero-palm-left">
+      <img src="{{ section.settings.left_palm | image_url }}" alt="left palm">
+    </span>
+  {% endif %}
+
+  {% if section.settings.right_palm != blank %}
+    <span class="hero-palm-right">
+      <img src="{{ section.settings.right_palm | image_url }}" alt="right palm">
+    </span>
+  {% endif %}
+</section>
+
+{% schema %}
+  {
+    "name": "Hero Section",
+    "settings": [
+      {
+        "type": "url",
+        "id": "video_url",
+        "label": "Video URL (.mp4)"
+      },
+      {
+        "type": "image_picker",
+        "id": "poster",
+        "label": "Video Poster"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "MAKE A BREAK"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "FOR THE ISLANDS TODAY"
+      }, {
+        "type": "richtext",
+        "id": "text",
+        "label": "Description"
+      }, {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label",
+        "default": "Explore Flavors"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }, {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Mobile Background Image"
+      }, {
+        "type": "image_picker",
+        "id": "desktop_image",
+        "label": "Desktop Background Image"
+      }, {
+        "type": "image_picker",
+        "id": "left_palm",
+        "label": "Left Palm Image"
+      }, {
+        "type": "image_picker",
+        "id": "right_palm",
+        "label": "Right Palm Image"
+      }, {
+        "type": "checkbox",
+        "id": "add_custom_class",
+        "label": "Disable Fruit Animation",
+        "default": false
+      }
+    ],
+
+    "presets": [
+      {
+        "name": "Hero Section Cloned"
+      }
+    ]
+  }
+{% endschema %}

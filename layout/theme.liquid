@@ -1,0 +1,63 @@
+<!doctype html>
+<html 
+  lang="{{ request.locale.iso_code }}"
+  class="{% if request.design_mode %}design-mode{% endif %}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_primary }}">
+
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+
+  {%- unless settings.favicon == blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: '32', height: '32' }}">
+  {%- endunless -%}
+  <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/favicon.png?v=1768335490">
+
+  <title>
+    {{ page_title }}
+    {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+    {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+    {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+  </title>
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  {% render 'meta-tags' %}
+
+  {{ content_for_header }}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">  
+  <!--{{ 'predective-search.js' | asset_url | script_tag }}-->
+
+  {% render 'styles-scripts' %}
+</head>
+
+<body class="{{ request.page_type | prepend: 'page-type-' }}">
+  <a class="visually-hidden-focusable" href="#main">
+    {{ 'general.accessibility.skip_content' | t }}
+  </a>
+  
+  <div class="main-wrapper" id="smooth-content" data-scroll-container>
+    {% sections 'header-group' %}
+    
+    {{ content_for_layout }}
+    
+    {% sections 'footer-group' %}
+  </div>
+
+  {% liquid
+    render 'offcanvas-cart'
+    render 'offcanvas-search'
+    render 'modal-localization'
+    render 'rich-snippets'
+  %}
+</body>
+</html>
+    

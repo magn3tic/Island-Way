@@ -1,0 +1,230 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page_builder_banner_KjJL4B": {
+      "type": "page-builder-banner",
+      "name": "Product Banner",
+      "settings": {
+        "bg_image": "shopify://shop_images/product-banner.webp",
+        "heading": "PARADISE IN EVERY BITE",
+        "button_label": "",
+        "button_link": "",
+        "enable_shapes": true,
+        "shape_cream": "shopify://shop_images/banner-cream.webp",
+        "shape_berry": "shopify://shop_images/banner-berry.webp",
+        "shape_orange": "shopify://shop_images/banner-orange.webp",
+        "shape_coconut": "shopify://shop_images/banner-coconut.webp"
+      }
+    },
+    "page_builder_products_6BjYDx": {
+      "type": "page-builder-products",
+      "name": "All Products",
+      "settings": {
+        "collection": "flavors",
+        "title": "Products Available Online & In-Store",
+        "heading": "TRY THEM ALL"
+      }
+    },
+     "page_builder_testimonials_GWakpw": {
+      "type": "page-builder-testimonials",
+      "blocks": {
+        "testimonial_XLhTKe": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Review",
+            "review_text": "My taste buds were in heaven you must give this a whirl.",
+            "author": "Leslie",
+            "rating": "5"
+          }
+        },
+        "testimonial_BB7tdQ": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Review",
+            "review_text": "Thank you for such a delicious & fun treat! ",
+            "author": "AnnMarie",
+            "rating": "5"
+          }
+        },
+        "testimonial_rNTBbD": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Review",
+            "review_text": "These are so creamy, so smooth, so fruity and delicious!",
+            "author": "Vanessa",
+            "rating": "5"
+          }
+        },
+        "testimonial_HYEGdH": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Review",
+            "review_text": "All the flavors are so good and perfect for summer",
+            "author": "Kat",
+            "rating": "5"
+          }
+        },
+        "testimonial_Vm4LTk": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Review",
+            "review_text": "These are an absolute necessity",
+            "author": "Aziza",
+            "rating": "5"
+          }
+        },
+        "testimonial_8far9U": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Review",
+            "review_text": "So freaking good!",
+            "author": "Laura",
+            "rating": "5"
+          }
+        },
+        "testimonial_y99YGd": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "title": "Review",
+            "review_text": "Tastes like vacation in a shell!",
+            "author": "",
+            "rating": "5"
+          }
+        },
+        "testimonial_mnfMAM": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "title": "Review",
+            "review_text": "My kids can’t get enough of these!",
+            "author": "",
+            "rating": "5"
+          }
+        },
+        "testimonial_8hygfm": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "title": "Review",
+            "review_text": "So refreshing and perfectly creamy.",
+            "author": "",
+            "rating": "5"
+          }
+        },
+        "testimonial_3cgnfK": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "title": "Review",
+            "review_text": "It’s our new dessert obsession.",
+            "author": "",
+            "rating": "5"
+          }
+        },
+        "testimonial_whwzXn": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "title": "Review",
+            "review_text": "These feel and taste fancy!",
+            "author": "",
+            "rating": "5"
+          }
+        },
+        "testimonial_fA3jqi": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "title": "Review",
+            "review_text": "The coconut one? Unreal.",
+            "author": "",
+            "rating": "5"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_XLhTKe",
+        "testimonial_BB7tdQ",
+        "testimonial_rNTBbD",
+        "testimonial_HYEGdH",
+        "testimonial_Vm4LTk",
+        "testimonial_8far9U",
+        "testimonial_y99YGd",
+        "testimonial_mnfMAM",
+        "testimonial_8hygfm",
+        "testimonial_3cgnfK",
+        "testimonial_whwzXn",
+        "testimonial_fA3jqi"
+      ],
+      "name": "Testimonials Section",
+      "settings": {}
+    },
+    "page_builder_text_slider_TtRXpB": {
+      "type": "page-builder-text-slider",
+      "blocks": {
+        "text_mNYe7q": {
+          "type": "text",
+          "settings": {
+            "text": "creamy"
+          }
+        },
+        "text_NzNCDa": {
+          "type": "text",
+          "settings": {
+            "text": "indulgent"
+          }
+        },
+        "text_yiP4fW": {
+          "type": "text",
+          "settings": {
+            "text": "smooth"
+          }
+        },
+        "text_WyWNAD": {
+          "type": "text",
+          "settings": {
+            "text": "natural"
+          }
+        }
+      },
+      "block_order": [
+        "text_mNYe7q",
+        "text_NzNCDa",
+        "text_yiP4fW",
+        "text_WyWNAD"
+      ],
+      "name": "Product Text Slider",
+      "settings": {}
+    },
+    "store_builder_store_tDmVNM": {
+      "type": "store-builder-store",
+      "name": "Store Locator",
+      "settings": {
+        "style": "style_two",
+        "heading": "Find a store near you",
+        "subtext": "",
+        "bg_shape": "shopify://shop_images/store-shape.webp",
+        "sign_img": "shopify://shop_images/paradise_sign.webp",
+        "tree_img": "shopify://shop_images/connection-tree.webp",
+        "video_bg": "https://cdn.shopify.com/videos/c/o/v/73856ce4bd0247e3a9b8e058de3c6cd9.mp4",
+        "map_iframe": "<iframe class=\"optanon-category-C0001 pear-iframe\" src=\"https://offers.pearcommerce.com/product-locator/2667515213543393?t=676&amp;offerId=2667515213543393&amp;widgetId=2732024422679548&amp;initialWidth=0&amp;childId=pear-widget-iframe-wrap-2732024422679548&amp;parentTitle=Store%20Locator%20Island%20Way%20Sorbet&amp;parentUrl=https%3A%2F%2Fislandway.com%2Fpages%2Fstore-locator\" width=\"100%\" height=\"600\" frameborder=\"0\" allowfullscreen></iframe>"
+      }
+    }
+  },
+  "order": [
+    "page_builder_banner_KjJL4B",
+    "page_builder_products_6BjYDx",
+    "page_builder_testimonials_GWakpw",
+    "page_builder_text_slider_TtRXpB",
+    "store_builder_store_tDmVNM"
+  ]
+}

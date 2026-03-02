@@ -1,0 +1,137 @@
+<section class="content-area product-area pt-0 bg_blue">
+    <span class="product-palm-right">
+      <img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/product-right.webp" alt="palm right">
+    </span>
+    <span class="testimonial-palm-left">
+      <img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/testimonial-left.webp" alt="palm left">
+    </span>
+
+  <div class="container">
+    <div class="section-heading">
+      {% if section.settings.subheading != blank %}
+        <span class="title text_white">{{ section.settings.subheading }}</span>
+      {% endif %}
+      {% if section.settings.heading != blank %}
+        <h2 class="heading text_white">{{ section.settings.heading }}</h2>
+      {% endif %}
+    </div>
+
+    <div class="row">
+        {% for block in section.blocks %}
+        {% assign product = all_products[block.settings.product] %}
+        {% if product %}
+           {% assign availability_text = product.metafields.custom.availability.value | default: '' %}
+          {% assign meta_featured = product.metafields.custom.custom_featured_image %}
+          {% assign meta_fruit = product.metafields.custom.fruit_image %}
+
+          <div class="col-lg-4 col-sm-6">
+            <a href="{{ product.url }}" class="product-box et-js-tilt">
+              <div class="image-box">
+
+                {% if meta_featured != blank %}
+                  <img src="{{ meta_featured | image_url: width: 600 }}" alt="{{ product.title }}">
+                  <span class="food-box-shadow"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/box-shadow.webp"></span>
+                {% else %}
+                  <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title }}">
+                {% endif %}
+
+                <span class="palm-shape"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/palm-shape.webp"></span>
+                {% if meta_fruit != blank %}
+                  <span class="food-shadow"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/food-shadow.webp"></span>
+                  <span class="cream-flavour">
+                    <img src="{{ meta_fruit | image_url: width: 600 }}" alt="{{ product.title }}">
+                  </span>
+                {% endif %}                
+              </div>
+
+              <div class="text-box">
+                <h3 class="title">{{ product.title }}</h3>
+                {% if block.settings.pack_info != blank or block.settings.shell_info != blank %}
+                  <ul>
+                    {% if block.settings.pack_info != blank %}
+                      <li>{{ block.settings.pack_info }}</li>
+                    {% endif %}
+                    {% if block.settings.pack_info != blank and block.settings.shell_info != blank %}
+                      <li>|</li>
+                    {% endif %}
+                    {% if block.settings.shell_info != blank %}
+                      <li>{{ block.settings.shell_info }}</li>
+                    {% endif %}
+                  </ul>
+                {% endif %}
+
+                {% if availability_text == 'Available Online' %}
+                <div class="price-ratting">
+                  <span class="price-text">{{ product.price | money }}</span>
+                </div>        
+                  <span class="cta-btn">ADD TO CART</span>
+                {% else %}
+                  <span class="cta-btn alt">Available in Store</span>
+                {% endif %}
+
+              </div>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      {% if section.settings.cta_label != blank %}
+        <div class="col-lg-12">
+          <div class="product-action text-center">
+            <a href="{{ section.settings.cta_link }}" class="cta-btn btn_blue">
+              {{ section.settings.cta_label }}
+            </a>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Our Products"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Tropical flavors that<br> suit all islanders"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Bottom CTA Label",
+      "default": "EXPLORE ALL FLAVOURS"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Bottom CTA Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_block",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "Featured Products" }
+  ]
+}
+{% endschema %}

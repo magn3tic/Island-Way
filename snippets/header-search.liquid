@@ -1,0 +1,61 @@
+<!-- Search Overlay -->
+<div class="header-search">
+  <div class="container-fluid">
+    <div class="inner d-flex align-items-center">
+      {% if settings.predictive_search_enabled %}
+        <predictive-search class="search-form-wrapper" data-loading-text="{{ 'accessibility.loading' | t }}">
+      {% else %}
+        <search-form class="search-form-wrapper">
+      {% endif %}
+
+      <form action="{{ routes.search_url }}" method="get" role="search">
+        <label for="search-f" class="visually-hidden">Search</label>
+        <input
+          id="search-f"
+          type="search"
+          name="q"
+          placeholder="Search..."
+          value="{{ search.terms | escape }}"
+          {% if settings.predictive_search_enabled %}
+            role="combobox"
+            aria-expanded="false"
+            aria-owns="predictive-search-results"
+            aria-controls="predictive-search-results"
+            aria-haspopup="listbox"
+            aria-autocomplete="list"
+            autocorrect="off"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          {% endif %}
+        >
+
+        <button type="submit">
+          <img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/search.webp" alt="search icon">
+        </button>
+      </form>
+
+      {% if settings.predictive_search_enabled %}
+        <div
+          class="predictive-search predictive-search--custom"
+          tabindex="-1"
+          data-predictive-search
+        >
+          {% render 'loading-spinner', class: 'predictive-search__loading-state' %}
+        </div>
+
+        <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+      {% endif %}
+
+      {% if settings.predictive_search_enabled %}
+        </predictive-search>
+      {% else %}
+        </search-form>
+      {% endif %}
+
+      <span class="close-search">
+        <em class="fa-solid fa-xmark"></em> Close
+      </span>
+    </div>
+  </div>
+</div>

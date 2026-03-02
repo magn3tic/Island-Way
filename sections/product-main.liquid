@@ -1,0 +1,497 @@
+<section class="content-area product-details bg_brown pb-0">
+  {% if product %}
+    <img class="product-details-shape" src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/product-details-palm.webp" alt="image">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 col-sm-6">
+          <div class="pr-slide-box">
+            <span class="palm-shape">
+              <img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/palm-shape.webp" alt="palm shape">
+            </span>
+
+            {% assign meta_featured = product.metafields.custom.custom_featured_image %}
+
+            <!-- Main Slider -->
+            <div class="product-details-slider">
+              {% if meta_featured != blank %}
+                <div class="slide">
+                  <div class="image-box">
+                    <img 
+                      src="{{ meta_featured | image_url: width: 800 }}" 
+                      alt="{{ product.title }} (Featured Image)">
+                  </div>
+                </div>
+              {% endif %}
+
+              {% for media in product.media %}
+                <div class="slide">
+                  <div class="image-box">
+                    {{ media | image_url: width: 800 | image_tag: alt: product.title }}
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Thumbnail Navigation -->
+          <div class="product-details-slider-nav">
+            {% if meta_featured != blank %}
+              <div class="slide">
+                <div class="thumb-box">
+                  <img 
+                    src="{{ meta_featured | image_url: width: 200 }}" 
+                    alt="{{ product.title }} (Featured Image Thumbnail)">
+                </div>
+              </div>
+            {% endif %}
+
+            {% for media in product.media %}
+              <div class="slide">
+                <div class="thumb-box">
+                  {{ media | image_url: width: 200 | image_tag: alt: product.title }}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="col-lg-6 col-sm-6 ms-auto">
+          <div class="content-text product-info">
+            <div class="review-text">
+              <div class="review-stars"></div>
+              {% if product.metafields.custom.availability != blank %}
+                <span>{{ product.metafields.custom.availability }}</span>
+              {% endif %}              
+            </div>
+
+            <script>
+              document.addEventListener("DOMContentLoaded", () => {
+                const jdgmBadge = document.querySelector(".jdgm-widget.jdgm-preview-badge");
+                const reviewStars = document.querySelector(".review-stars");
+
+                if (jdgmBadge && reviewStars) {
+                  reviewStars.appendChild(jdgmBadge);
+                }
+              });
+            </script>
+
+            <h2 class="heading">{{ product.title }}</h2>
+
+            {% assign availability_text = product.metafields.custom.availability.value | default: '' %}
+            {% if availability_text == 'Available Online' %}
+
+            {% if product.price %}
+              <div class="price-action">
+                <span class="price" id="product-price">{{ product.price | money }}</span>
+                <ul>
+                  {% for variant in product.variants %}
+                    <li>
+                      <input
+                        type="radio"
+                        name="variant"
+                        id="variant-{{ variant.id }}"
+                        value="{{ variant.id }}"
+                        data-price="{{ variant.price | money }}"
+                        {% if forloop.first %}checked{% endif %}
+                      >
+                      <label for="variant-{{ variant.id }}">{{ variant.title }}</label>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+
+            {% endif %}
+
+            {% assign availability_text = product.metafields.custom.availability.value | default: '' %}
+            {% if availability_text == 'Available Online' %}
+
+            <div class="product-details-action">
+              <form method="post" action="/cart/add" id="add-to-cart-form">
+                <input type="hidden" name="id" id="selected-variant" value="{{ product.variants.first.id }}">
+                <button type="submit" class="btn-atc cta-btn btn_blue">ADD TO CART</button>
+              </form>
+            </div>
+
+            {% else %}
+            <div class="product-details-action">
+              <a href="/pages/stores" class="cta-btn btn_blue">Find Near Me</a>
+            </div>
+            {% endif %}
+
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              const variantRadios = document.querySelectorAll('input[name="variant"]');
+              const variantInput = document.getElementById("selected-variant");
+              const priceDisplay = document.getElementById("product-price");
+
+              variantRadios.forEach(radio => {
+                radio.addEventListener("change", function() {
+                  variantInput.value = this.value; // update hidden input
+                  if (priceDisplay && this.dataset.price) {
+                    priceDisplay.textContent = this.dataset.price; // update price visually
+                  }
+                });
+              });
+            });
+            </script>
+
+            {% if product.description != blank %}
+              <div class="mt-4">{{ product.description }}</div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</section>
+
+<section class="content-area bg_brown">
+  <div class="container">
+
+    <!-- Desktop Tabs -->
+    <div class="location-tab d-none d-md-block px-lg-5">
+      <div class="tabs_wrapper">
+        <ul class="product-nav nav-tabs" id="myTab" role="tablist">
+
+          {% if product.metafields.custom.availability != blank %}
+            <li class="nav-item">
+              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#availability">WHERE TO FIND IT</button>
+            </li>
+          {% endif %}
+
+          {% if product.metafields.custom.quantity != blank %}
+            <li class="nav-item">
+              <button class="nav-link {% if product.metafields.custom.availability == blank %}active{% endif %}" data-bs-toggle="tab" data-bs-target="#quantity">QUANTITY INFO</button>
+            </li>
+          {% endif %}
+
+          {% if product.metafields.custom['nutritional-info'] != blank %}
+            <li class="nav-item">
+              <button class="nav-link 
+                {% if product.metafields.custom.availability == blank 
+                  and product.metafields.custom.quantity == blank %}active{% endif %}" 
+                data-bs-toggle="tab" data-bs-target="#nutrition">NUTRITIONAL PANEL</button>
+            </li>
+          {% endif %}
+
+          {% if product.metafields.custom['allergen-info'] != blank %}
+            <li class="nav-item">
+              <button class="nav-link 
+                {% if product.metafields.custom.availability == blank 
+                  and product.metafields.custom.quantity == blank 
+                  and product.metafields.custom['nutritional-info'] == blank %}active{% endif %}" 
+                data-bs-toggle="tab" data-bs-target="#allergen">ALLERGEN INFO</button>
+            </li>
+          {% endif %}
+
+          {% if product.metafields.custom['product-ingredients'] != blank %}
+            <li class="nav-item">
+              <button class="nav-link 
+                {% if product.metafields.custom.availability == blank 
+                  and product.metafields.custom.quantity == blank 
+                  and product.metafields.custom['nutritional-info'] == blank 
+                  and product.metafields.custom['allergen-info'] == blank %}active{% endif %}" 
+                data-bs-toggle="tab" data-bs-target="#ingredients">INGREDIENTS</button>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+
+      <div class="tab-content">
+          <div class="tab-pane fade show active" id="availability">
+            <div class="content-tab-text text-center">
+                <div class="content-tab-text text-center">
+                    <p>Looking for an escape to a tropical taste paradise? You’re in the right place.</p>
+                </div>
+                <div class="contact-inner map">
+                  <div id="pear-map-target" class="store-locator lrg"></div>
+                  <script type="text/javascript"> (function(e) {s=document.createElement("script"),s.type="text/javascript",s.src="https://offers.pearcommerce.com/js/sdk.js?config="+encodeURIComponent(JSON.stringify(e)),document.head.appendChild(s)}) ({vendorId:'2667515213543393', widget:'product-locator'}) </script>                    
+                </div>              
+            </div>
+          </div>
+
+        {% if product.metafields.custom.quantity != blank %}
+          <div class="tab-pane fade" id="quantity">
+            <div class="content-tab-text text-center">
+              {{ product.metafields.custom.quantity }}
+            </div>
+          </div>
+        {% endif %}
+
+        {% if product.metafields.custom['nutritional-info'] != blank %}
+          <div class="tab-pane fade" id="nutrition">
+            <div class="content-tab-text text-center">
+              {% assign nutrition = product.metafields.custom['nutritional-info'].value %}
+              {% if nutrition %}
+                <ul class="nutrition-list">
+                  {% for item in nutrition %}
+                    <li>{{ item }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+
+        {% if product.metafields.custom['allergen-info'] != blank %}
+          <div class="tab-pane fade 
+            {% if product.metafields.custom.availability == blank 
+              and product.metafields.custom.quantity == blank 
+              and product.metafields.custom['nutritional-info'] == blank %}show active{% endif %}" 
+            id="allergen">
+            <div class="content-tab-text text-center">
+              {% assign allergens = product.metafields.custom['allergen-info'].value %}
+              {% if allergens %}
+                {% if allergens.first %}
+                  <ul class="allergen-list">
+                    {% for item in allergens %}
+                      <li>{{ item }}</li>
+                    {% endfor %}
+                  </ul>
+                {% else %}
+                  {{ allergens }}
+                {% endif %}
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+
+        {% if product.metafields.custom['product-ingredients'] != blank %}
+          <div class="tab-pane fade 
+            {% if product.metafields.custom.availability == blank 
+              and product.metafields.custom.quantity == blank 
+              and product.metafields.custom['nutritional-info'] == blank 
+              and product.metafields.custom['allergen-info'] == blank %}show active{% endif %}" 
+            id="ingredients">
+            <div class="content-tab-text text-center">
+              {% assign ingredients = product.metafields.custom['product-ingredients'].value %}
+              {% if ingredients %}
+                {% if ingredients.first %}
+                  <ul class="ingredients-list">
+                    {% for item in ingredients %}
+                      <li>{{ item }}</li>
+                    {% endfor %}
+                  </ul>
+                {% else %}
+                  {{ ingredients }}
+                {% endif %}
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Mobile Accordion -->
+    <div class="d-md-none">
+      <div class="accordion location-accordion" id="accordionExample">
+
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAvailability">
+                WHERE TO FIND IT
+              </button>
+            </div>
+            <div id="collapseAvailability" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <div class="content-tab-text text-center">
+                    <p>Looking for an escape to a tropical taste paradise? You’re in the right place.</p>
+                </div>
+                <div class="contact-inner map">
+                    <iframe class="optanon-category-C0001 pear-iframe" src="https://offers.pearcommerce.com/product-locator/2667515213543393?t=929&amp;offerId=2667515213543393&amp;widgetId=2732024422679548&amp;initialWidth=0&amp;childId=pear-widget-iframe-wrap-2732024422679548&amp;parentTitle=Store%20Locator%20%E2%80%93%20Island%20Way%20Sorbet&amp;parentUrl=https%3A%2F%2Fislandway.com%2Fpages%2Fstore-locator" width="100%" scrolling="no" marginheight="0" frameborder="0" allowtransparency="true" allow-top-navigation="true" title="pear-store-finder" style="height: 800px;" height="800px" bis_size="{&quot;x&quot;:64,&quot;y&quot;:513,&quot;w&quot;:2727,&quot;h&quot;:799,&quot;abs_x&quot;:64,&quot;abs_y&quot;:513}" bis_id="fr_ar16f9hiawop8evri5a3lo" bis_depth="0" bis_chainid="1"></iframe>
+                </div>                
+              </div>
+            </div>
+          </div>
+
+        {% if product.metafields.custom.quantity != blank %}
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseQuantity">
+                QUANTITY INFO
+              </button>
+            </div>
+            <div id="collapseQuantity" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{ product.metafields.custom.quantity }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if product.metafields.custom['nutritional-info'] != blank %}
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNutrition">
+                NUTRITIONAL INFO
+              </button>
+            </div>
+            <div id="collapseNutrition" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {% assign nutrition = product.metafields.custom['nutritional-info'].value %}
+                {% if nutrition %}
+                  {% if nutrition.first %}
+                    <ul class="nutrition-list">
+                      {% for item in nutrition %}
+                        <li>{{ item }}</li>
+                      {% endfor %}
+                    </ul>
+                  {% else %}
+                    {{ nutrition }}
+                  {% endif %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if product.metafields.custom['allergen-info'] != blank %}
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAllergen">
+                ALLERGEN INFO
+              </button>
+            </div>
+            <div id="collapseAllergen" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {% assign allergens = product.metafields.custom['allergen-info'].value %}
+                {% if allergens %}
+                  {% if allergens.first %}
+                    <ul class="allergen-list">
+                      {% for item in allergens %}
+                        <li>{{ item }}</li>
+                      {% endfor %}
+                    </ul>
+                  {% else %}
+                    {{ allergens }}
+                  {% endif %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if product.metafields.custom['product-ingredients'] != blank %}
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIngredients">
+                INGREDIENTS
+              </button>
+            </div>
+            <div id="collapseIngredients" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {% assign ingredients = product.metafields.custom['product-ingredients'].value %}
+                {% if ingredients %}
+                  {% if ingredients.first %}
+                    <ul class="ingredients-list">
+                      {% for item in ingredients %}
+                        <li>{{ item }}</li>
+                      {% endfor %}
+                    </ul>
+                  {% else %}
+                    {{ ingredients }}
+                  {% endif %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const addForm = document.getElementById('add-to-cart-form');
+  const variantInput = document.getElementById('selected-variant');
+  if (!addForm || !variantInput) return;
+
+  // --- Ensure single clean cart badge ---
+  function ensureCartBadge() {
+    document.querySelectorAll('.cart-count-badge').forEach((badge, i) => {
+      if (i > 0) badge.remove();
+      else if (!badge.textContent || badge.textContent.includes('null') || badge.textContent.trim() === '') {
+        badge.textContent = '0';
+      }
+    });
+
+    const headerCart = document.querySelector('.shipment, .header-cart, .site-header__cart') || document.body;
+    let badge = headerCart.querySelector('.cart-count-badge');
+    if (!badge) {
+      badge = document.createElement('span');
+      badge.className = 'cart-count-badge';
+      badge.textContent = '0';
+      headerCart.appendChild(badge);
+    }
+
+    // Clean stray “null” text nodes
+    [...headerCart.childNodes].forEach(node => {
+      if (node.nodeType === 3 && node.textContent.trim().toLowerCase().includes('null')) node.remove();
+    });
+
+    return badge;
+  }
+
+  // --- AJAX Add to Cart ---
+  addForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const variantId = variantInput.value;
+    if (!variantId) return;
+
+    const formData = new FormData();
+    formData.append('id', variantId);
+    formData.append('quantity', 1);
+
+    ensureCartBadge();
+    let cartContainer = document.querySelector('cart-container');
+    if (!cartContainer) {
+      cartContainer = document.createElement('cart-container');
+      document.body.appendChild(cartContainer);
+    }
+
+    try {
+      await cartContainer.add(formData);
+      window.dispatchEvent(new Event('kt.cart.reloaded'));
+    } catch (err) {
+      console.error('Cart add failed:', err);
+      setTimeout(() => {
+        const retryContainer = document.querySelector('cart-container');
+        if (retryContainer && retryContainer.add) retryContainer.add(formData);
+      }, 400);
+    }
+  });
+
+  // --- Keep Badge Synced ---
+  function refreshCartBadge() {
+    const badge = ensureCartBadge();
+    fetch('/cart.js')
+      .then(r => r.json())
+      .then(cart => {
+        badge.textContent = (cart.item_count || 0).toString();
+      })
+      .catch(() => {
+        badge.textContent = '0';
+      });
+  }
+
+  document.addEventListener('DOMContentLoaded', refreshCartBadge);
+  window.addEventListener('kt.cart.reloaded', refreshCartBadge);
+});
+</script>
+
+{% schema %}
+{
+  "name": "Product Custom",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Product Custom"
+    }
+  ]
+}
+{% endschema %}

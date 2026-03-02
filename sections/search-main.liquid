@@ -1,0 +1,93 @@
+<!-- Search Page Section -->
+<section class="search-main py-0">
+
+  {% if search.performed %}
+    {% paginate search.results by 48 %}
+
+  <section class="collection-header bg_blue text-center">
+    <div class="container">
+      <div class="section-heading text-center">
+        <h1 class="heading">
+          {% if search.performed %}
+            {{ 'general.search.search_page.title_search_performed' | t }}
+          {% else %}
+            {{ 'general.search.search_page.title' | t }}
+          {% endif %}
+        </h1>
+
+          {% if search.results_count == 0 %}
+            <p class="text-center alert alert-warning my-6">
+              {{ 'general.search.search_page.no_results' | t: terms: search.terms }}
+            </p>
+          {% else %}
+            <p class="search-count text-center mb-4">
+              {{ 'general.search.search_page.count_products' | t: count: search.results_count }}
+            </p>       
+          {% endif %} 
+      </div>
+    </div>
+  </section>
+
+      <div class="search-results pt-5">
+        <div class="container">
+
+          {% if search.results_count == 0 %}
+            <p class="text-center alert alert-warning my-6">
+              {{ 'general.search.search_page.no_results' | t: terms: search.terms }}
+            </p>
+          {% else %}
+            <div class="row">
+              {% for item in search.results %}
+                 {% if item.object_type == 'product' %}
+                   {% assign availability_text = product.metafields.custom.availability.value | default: '' %}
+                  <div class="col-lg-4 col-sm-6 mb-5">
+                    <a href="{{ item.url }}" class="product-box et-js-tilt">
+                      <div class="image-box">
+                        {% if item.featured_image %}
+                          <img src="{{ item.featured_image | image_url: width: 600 }}" alt="{{ item.title | escape }}">
+                        {% endif %}
+                        <span class="palm-shape"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/palm-shape.webp" alt=""></span>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">{{ item.title }}</h3>
+                        <div class="price-ratting">
+                           {% if availability_text == 'Available Online' %} 
+                          <span class="price-text">{{ product.price | money }}</span>
+                           {% endif %}   
+                          <div class="review-stars">
+                            <div class="jdgm-widget jdgm-preview-badge" data-id="{{ item.id }}"></div>
+                          </div>
+                        </div>
+
+                        {% assign availability = item.metafields.custom.availability.value | default: '' | strip %}
+                        {% if availability == 'Available Online' %}
+                          <span class="cta-btn">ADD TO CART</span>
+                        {% else %}
+                          <span class="cta-btn alt">Available in store</span>
+                        {% endif %}
+                      </div>
+                    </a>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+
+            {% render 'pagination', paginate: paginate %}
+          {% endif %}
+        </div>
+      </div>
+    {% endpaginate %}
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Search Page",
+  "templates": ["search"],
+  "presets": [
+    {
+      "name": "Search Page"
+    }
+  ]
+}
+{% endschema %}

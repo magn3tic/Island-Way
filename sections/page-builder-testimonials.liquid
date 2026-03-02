@@ -1,0 +1,85 @@
+<section class="
+  content-area 
+  testimonial-area
+  {% if template.name == 'index' %}
+    bg_brown py-0
+  {% else %}
+    alt bg_blue relative pt-0
+  {% endif %}
+">
+  <div class="testimonial-slider">
+    {% for block in section.blocks %}
+      <div class="slide">
+        <div class="content-box text-center">
+          {% if block.settings.title != blank %}
+            <span class="title">{{ block.settings.title }}</span>
+          {% endif %}
+          
+          {% if block.settings.review_text != blank %}
+            <h3 class="post">“{{ block.settings.review_text }}”</h3>
+          {% endif %}
+          
+          {% if block.settings.author != blank %}
+            <span class="author">{{ block.settings.author }}</span>
+          {% endif %}
+          
+          <div class="rating-star-wrap rating-{{ block.settings.rating }} mx-auto d-table">
+            <img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/five-stars.webp" alt="stars">
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials Section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Review"
+        },
+        {
+          "type": "text",
+          "id": "review_text",
+          "label": "Review Quote",
+          "default": "YUMMY AND SO MUCH FUN TO EAT!"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author Name",
+          "default": "Annmarie"
+        },
+        {
+          "type": "select",
+          "id": "rating",
+          "label": "Rating",
+          "default": "5",
+          "options": [
+            { "value": "1", "label": "1 Star" },
+            { "value": "2", "label": "2 Stars" },
+            { "value": "3", "label": "3 Stars" },
+            { "value": "4", "label": "4 Stars" },
+            { "value": "5", "label": "5 Stars" }
+          ]
+        }        
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials Section",
+      "category": "Content"
+    }
+  ]
+}
+{% endschema %}

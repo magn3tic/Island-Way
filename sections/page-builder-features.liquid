@@ -1,0 +1,155 @@
+<section class="content-area bg_blue relative feature-area">
+  {% if section.settings.left_img != blank %}
+    <img class="service-left-img hand-bowl1" src="{{ section.settings.left_img | image_url }}" alt="image">
+  {% endif %}
+  {% if section.settings.right_img != blank %}
+    <img class="service-left-img hand-bowl2" src="{{ section.settings.right_img | image_url }}" alt="image">
+  {% endif %}
+
+  {% if section.settings.feature_tag != blank %}
+    <div class="feature-tags">{{ section.settings.feature_tag }}</div>
+  {% endif %}
+
+  <div class="container container-box">
+    <div class="section-heading text-center service-white">
+      {% if section.settings.heading != blank %}
+        <h2 class="heading text-white">{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if section.settings.desc_1 != blank %}
+        {{ section.settings.desc_1 }}
+      {% endif %}
+    </div>
+
+    <div class="inner-features">
+      <div class="row">
+        <div class="col-lg-4 col-6 ms-auto">
+          <div class="service-text">
+            {% for block in section.blocks %}
+              <div class="content-text">
+                {% if block.settings.title != blank %}
+                  <h3 class="title">{{ block.settings.title }}</h3>
+                {% endif %}
+                {% if block.settings.text != blank %}
+                  {{ block.settings.text }}
+                {% endif %}
+
+                {% case forloop.index %}
+                  {% when 1 %}
+                    <span class="shape-one">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="280" height="91" viewBox="0 0 280 91" fill="none">
+                        <path class="draw-path" d="M2.6001 88.5H98.1001C111.355 88.5 122.1 77.7548 122.1 64.5V26C122.1 12.7452 132.845 2 146.1 2H278" stroke="white" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 8" />
+                      </svg>
+                    </span>
+                  {% when 2 %}
+                    <span class="shape-two">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="176" height="164" viewBox="0 0 176 164" fill="none">
+                        <path class="draw-path" d="M2 161.5L68.8512 112.078C80.4198 103.526 81.9165 86.7872 72.0488 76.3181L40.1371 42.4615C25.705 27.1497 36.5607 2 57.602 2H174" stroke="white" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 8" />
+                      </svg>
+                    </span>
+                  {% when 3 %}
+                    <span class="shape-three">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="108" height="51" viewBox="0 0 108 51" fill="none">
+                        <path class="draw-path" d="M2 48.4998L30.7932 11.9474C35.344 6.17034 42.2922 2.79859 49.6464 2.79859L106 2.79864" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8 8" />
+                      </svg>
+                    </span>
+                {% endcase %}
+              </div>
+            {% endfor %}
+
+            {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+              <a href="{{ section.settings.button_link }}" class="cta-btn btn_default">
+                {{ section.settings.button_label }}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if section.settings.shape_left != blank %}
+    <span class="service-shape-left"><img src="{{ section.settings.shape_left | image_url }}" alt="image"></span>
+  {% endif %}
+  {% if section.settings.shape_right != blank %}
+    <span class="service-shape-right"><img src="{{ section.settings.shape_right | image_url }}" alt="image"></span>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Features Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "left_img",
+      "label": "Left Bowl Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_img",
+      "label": "Right Bowl Image"
+    },
+    {
+      "type": "text",
+      "id": "feature_tag",
+      "label": "Feature Tag",
+      "default": "LESS WASTE"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Encased in<br> real fruit shells"
+    },
+    {
+      "type": "richtext",
+      "id": "desc_1",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "FIND IN STORES"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "shape_left",
+      "label": "Left Palm Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "shape_right",
+      "label": "Right Palm Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature_item",
+      "name": "Feature Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Features Section"
+    }
+  ]
+}
+{% endschema %}
