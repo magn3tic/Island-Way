@@ -28,7 +28,7 @@
             <input type="email" name="contact[email]" placeholder="Email" required>
             <button type="submit">
               {% if section.settings.arrow_icon %}
-                <img src="{{ section.settings.arrow_icon | image_url }}" alt="Submit">
+                {{ section.settings.arrow_icon  | image_url: width: 300 | image_tag }}
               {% else %}
                 <span>→</span>
               {% endif %}
@@ -45,7 +45,7 @@
     <div class="footer-bottom">
       <div class="footer-logo text-center">
         {% if section.settings.footer_logo %}
-          <a href="{{ routes.root_url }}"><img src="{{ section.settings.footer_logo | image_url }}" alt="Footer Logo"></a>
+          <a href="{{ routes.root_url }}">{{ section.settings.footer_logo | image_url: width: 335 | image_tag }}</a>
         {% endif %}
       </div>
 
@@ -76,14 +76,14 @@
         {% endif %}
 
         {% if section.settings.payment_icons %}
-          <span class="payment-method"><img src="{{ section.settings.payment_icons | image_url }}" alt="Payments"></span>
+          <span class="payment-method">{{ section.settings.payment_icons | image_url: width: 367 | image_tag }}</span>
         {% endif %}
       </div>
     </div>
   </div>
 
-  <span class="footer-palm-left"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/footer-palm-left.webp" alt="image"></span>
-  <span class="footer-palm-right"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/footer-palm-right.webp" alt="image"></span>
+  <span class="footer-palm-left"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/footer-palm-left.webp" alt="Island Way left palm" width = "444" height = "571" loading="lazy"></span>
+  <span class="footer-palm-right"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/footer-palm-right.webp" alt="image" width = "514" height = "558" loading="lazy"></span>
 </footer>
 
 {% schema %}
