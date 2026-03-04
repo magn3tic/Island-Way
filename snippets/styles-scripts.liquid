@@ -5,7 +5,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">  
   <!--{{ 'predective-search.js' | asset_url | script_tag }}-->
-  
+
 <script>
   Shopify.moneyFormat = '{{ shop.money_format }}'
   Shopify.routes = Shopify.routes || {}
@@ -53,6 +53,15 @@
     }
   }
 </script>
+
+
+{% comment %} 
+  Preconnect to external domains — must be first
+{% endcomment %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
 {% comment %} 
   Vendor 
