@@ -42,8 +42,8 @@
             <a href="{{ product.url }}" class="product-box et-js-tilt">
               <div class="image-box">
                 {% if meta_featured != blank %}
-                    {{ meta_featured | image_url: width: 600 | image_tag }}
-
+                    {{ meta_featured | image_url: width: 350 | image_tag }}
+                    
                   <span class="food-box-shadow">
                     <img
                       src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/box-shadow.webp"
@@ -56,7 +56,7 @@
                   </span>
                 {% else %}
                   <img
-                    src="{{ product.featured_image | image_url: width: 350, format: 'webp' }}"
+                    src="{{ product.featured_image | image_url: width: 600, format: 'webp' }}"
                     srcset="
                       {{ product.featured_image | image_url: width: 300, format: 'webp' }} 300w,
                       {{ product.featured_image | image_url: width: 450, format: 'webp' }} 450w,
