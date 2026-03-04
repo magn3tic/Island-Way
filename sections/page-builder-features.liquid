@@ -100,10 +100,40 @@
   </div>
 
   {% if section.settings.shape_left != blank %}
-    <span class="service-shape-left"><img src="{{ section.settings.shape_left | image_url }}" alt="image"></span>
+    <span class="service-shape-left">    
+      <img
+        src="{{ section.settings.shape_left | image_url: width: 400, format: 'webp' }}"
+        srcset="
+          {{ section.settings.shape_left | image_url: width: 200, format: 'webp' }} 200w,
+          {{ section.settings.shape_left | image_url: width: 400, format: 'webp' }} 400w,
+          {{ section.settings.shape_left | image_url: width: 600, format: 'webp' }} 600w
+        "
+        sizes="(max-width: 768px) 30vw, 20vw"
+        alt="{{ section.settings.shape_left.alt | default: 'Islandway leaf' }}"
+        width="{{ section.settings.shape_left.width }}"
+        height="{{ section.settings.shape_left.height }}"
+        loading="lazy"
+        decoding="async"
+      >
+    </span>
   {% endif %}
   {% if section.settings.shape_right != blank %}
-    <span class="service-shape-right"><img src="{{ section.settings.shape_right | image_url }}" alt="image"></span>
+    <span class="service-shape-right">     
+      <img
+        src="{{ section.settings.shape_right | image_url: width: 400, format: 'webp' }}"
+        srcset="
+          {{ section.settings.shape_right | image_url: width: 200, format: 'webp' }} 200w,
+          {{ section.settings.shape_right | image_url: width: 400, format: 'webp' }} 400w,
+          {{ section.settings.shape_right | image_url: width: 600, format: 'webp' }} 600w
+        "
+        sizes="(max-width: 768px) 30vw, 20vw"
+        alt="{{ section.settings.shape_right.alt | default: 'Islandway leaf' }}"
+        width="{{ section.settings.shape_right.width }}"
+        height="{{ section.settings.shape_right.height }}"
+        loading="lazy"
+        decoding="async"
+      >
+    </span>
   {% endif %}
 </section>
 
