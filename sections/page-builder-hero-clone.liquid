@@ -3,8 +3,7 @@
 {% endcomment %}
 
 <section class="hero-area {% if section.settings.add_custom_class %}hero-no-anim{% endif %} pb-0">
-  {% if section.settings.video_url != blank %}
-   {% if section.settings.video != blank %}
+   {% if section.settings.video_url != blank %}
   {{ section.settings.video | video_tag: 
     autoplay: true, 
     loop: true, 
@@ -13,9 +12,6 @@
     poster: section.settings.poster | image_url: width: 1200 
   }}
 {% endif %}
-   
-    
-  {% endif %}
   <div class="hero-inner-text">
     <div class="container">
       <div class="hero-text text-center">
