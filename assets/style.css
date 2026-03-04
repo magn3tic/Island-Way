@@ -198,7 +198,8 @@ section {
 .btn_default {
     border-color: #fff;
     background: #fff;
-    color: #0EA7D3
+    color: #0EA7D3;
+    text-decoration:none
 }
 
 .btn_blue {
