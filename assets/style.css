@@ -3557,7 +3557,7 @@ input[type="search"]::-webkit-search-results-decoration {
     }
 
     .product-slider span img {
-        height: 50px;
+        height: auto;
     }
 
     .feature-left-food {
