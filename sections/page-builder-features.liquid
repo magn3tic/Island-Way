@@ -1,6 +1,22 @@
 <section class="content-area bg_blue relative feature-area">
   {% if section.settings.left_img != blank %}
-    <img class="service-left-img hand-bowl1" src="{{ section.settings.left_img | image_url }}" alt="image" width = "{{ section.settings.left_img.width }}" height = "{{ section.settings.left_img.height }}">
+    <img
+    class="service-left-img hand-bowl1"
+    src="{{ section.settings.left_img | image_url: width: 900, format: 'webp' }}"
+    srcset="
+      {{ section.settings.left_img | image_url: width: 540, format: 'webp' }}  540w,
+      {{ section.settings.left_img | image_url: width: 720, format: 'webp' }}  720w,
+      {{ section.settings.left_img | image_url: width: 900, format: 'webp' }}  900w,
+      {{ section.settings.left_img | image_url: width: 1080, format: 'webp' }} 1080w,
+      {{ section.settings.left_img | image_url: width: 1296, format: 'webp' }} 1296w
+    "
+    sizes="(max-width: 768px) 100vw, 50vw"
+    alt="{{ section.settings.left_img.alt | default: 'Service image' }}"
+    width="{{ section.settings.left_img.width }}"
+    height="{{ section.settings.left_img.height }}"
+    loading="lazy"
+    decoding="async"
+  >
   {% endif %}
   {% if section.settings.right_img != blank %}
     <img
