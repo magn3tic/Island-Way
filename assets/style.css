@@ -34,10 +34,9 @@ body {
 
 a {
     color: #32463B;
-    text-decoration: none;
+    text-decoration: none !important;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-    text-decoration:none
 }
 
 a:hover {
