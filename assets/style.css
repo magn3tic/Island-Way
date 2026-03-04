@@ -5350,6 +5350,7 @@ body .hero-no-anim .hero-shape img {
     border-bottom-right-radius: 16px;
     position: relative;
     padding-bottom: 80px;
+    text-decoration:none
 }
 
 .product-box .cta-btn {
