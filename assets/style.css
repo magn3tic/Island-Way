@@ -463,7 +463,9 @@ section {
 }
 
 .hero-imege img {
-    margin: 0 auto
+    margin: 0 auto;
+    width:100%;
+    height:auto
 }
 
 .hero-imege {
