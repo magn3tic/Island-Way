@@ -38,12 +38,7 @@
                         {{ block.settings.about_image | image_url: width: 800, format: 'webp' }} 800w,
                         {{ block.settings.about_image | image_url: width: 1000, format: 'webp' }} 1000w
                       "
-                      sizes="
-                        (max-width: 480px) 100vw,
-                        (max-width: 768px) 100vw,
-                        (max-width: 1024px) 50vw,
-                        40vw
-                      "
+                      sizes="(max-width: 480px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
                       alt="{{ block.settings.about_image.alt | default: 'About Island Way' }}"
                       width="{{ block.settings.about_image.width }}"
                       height="{{ block.settings.about_image.height }}"
