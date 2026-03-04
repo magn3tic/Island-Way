@@ -79,6 +79,8 @@
 <link rel="stylesheet" href="{{ 'locomotive-scroll.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="{{ 'locomotive-scroll.css' | asset_url }}"></noscript>
 
+<script src="{{ 'jquery.min.js' | asset_url }}"></script>
+
 {% comment %} 
  Non Critical Styles 
 {% endcomment %}
@@ -88,7 +90,7 @@
 {{ 'product.css' | asset_url | stylesheet_tag: preload: true }}
 
 
-<script src="{{ 'jquery.min.js' | asset_url }}"></script>
+
 <script src="{{ 'bootstrap.bundle.min.js' | asset_url }}" defer></script>
 <script src="{{ 'gsap.min.js' | asset_url }}" defer></script>
 <script src="{{ 'ScrollTrigger.min.js' | asset_url }}" defer></script>
