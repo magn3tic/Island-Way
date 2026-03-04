@@ -16,7 +16,7 @@
       ],
       "name": "Hero Section Cloned",
       "settings": {
-        "video_url": "https://cdn.shopify.com/videos/c/o/v/10fc4f52037a46d79f7e03ea37592158.mp4",
+        "video": "shopify://files/videos/hero-bg.mp4",
         "poster": "shopify://shop_images/Island_Way_background_video_Poster.png",
         "heading": "MAKE A BREAK",
         "subheading": "FOR THE ISLANDS TODAY",
