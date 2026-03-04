@@ -49,41 +49,78 @@
   }
 </script>
 
+{% comment %} 
+  Preconnect to external domains
+{% endcomment %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">  
-  <!--{{ 'predective-search.js' | asset_url | script_tag }}-->
-  
-{% comment %} 
-  Vendor 
-{% endcomment %} 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-<link href="{{ 'locomotive-scroll.css' | asset_url }}" rel="stylesheet">
-
-
-<script src="{{ 'jquery.min.js' | asset_url }}"></script>
-<script src="{{ 'bootstrap.bundle.min.js' | asset_url }}" defer></script>
-<script src="{{ 'gsap.min.js' | asset_url }}" defer></script>
-<script src="{{ 'ScrollTrigger.min.js' | asset_url }}" defer></script>
-<script src="{{ 'locomotive-scroll.min.js' | asset_url }}" defer></script>
-<script src="{{ 'tilt.jquery.min.js' | asset_url }}" defer></script>
-<script src="{{ 'SplitText.min.js' | asset_url }}" defer></script>
-<script src="{{ 'ScrollSmoother.min.js' | asset_url }}" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="{{ 'main.js' | asset_url }}" defer></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
 {% comment %} 
-  Styles 
+  Critical CSS
 {% endcomment %}
 {{ 'variables.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'style.css' | asset_url | stylesheet_tag: preload: true }}
+
+{% comment %} 
+  Non-critical CSS
+{% endcomment %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"></noscript>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"></noscript>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"></noscript>
+
+<link rel="stylesheet" href="{{ 'locomotive-scroll.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{{ 'locomotive-scroll.css' | asset_url }}"></noscript>
+
 {{ 'sections.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'cart.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'collection.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'product.css' | asset_url | stylesheet_tag: preload: true }}
+
+
+{% comment %} 
+  jQuery + dependents loaded in correct order using async chain
+  Slick, tilt, and main.js depend on jQuery so they load after it
+{% endcomment %}
+<script>
+  (function() {
+    function loadScript(src, defer, onload) {
+      var s = document.createElement('script');
+      s.src = src;
+      if (defer) s.defer = true;
+      if (onload) s.onload = onload;
+      document.head.appendChild(s);
+    }
+
+    // Load jQuery first, then chain all jQuery-dependent scripts
+    loadScript("{{ 'jquery.min.js' | asset_url }}", false, function() {
+      // jQuery is ready — now load all dependents
+      loadScript("https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", false, function() {
+        // Slick ready — now load main.js which initializes sliders
+        loadScript("{{ 'main.js' | asset_url }}", false, null);
+      });
+      loadScript("{{ 'tilt.jquery.min.js' | asset_url }}", true, null);
+      loadScript("{{ 'bootstrap.bundle.min.js' | asset_url }}", true, null);
+    });
+
+    // GSAP stack is independent — load deferred in order
+    loadScript("{{ 'gsap.min.js' | asset_url }}", true, function() {
+      loadScript("{{ 'ScrollTrigger.min.js' | asset_url }}", true, function() {
+        loadScript("{{ 'ScrollSmoother.min.js' | asset_url }}", true, null);
+        loadScript("{{ 'SplitText.min.js' | asset_url }}", true, null);
+        loadScript("{{ 'locomotive-scroll.min.js' | asset_url }}", true, null);
+      });
+    });
+  })();
+</script>
 
 {% comment %} 
   Scripts 
@@ -94,8 +131,3 @@
 <script src="{{ 'collection.js' | asset_url }}" defer></script>
 <script src="{{ 'product.js' | asset_url }}" defer></script>
 <script src="{{ 'search.js' | asset_url }}" defer></script>
-
-{% comment %} 
-  Custom 
-{% endcomment %}
-{{ 'style.css' | asset_url | stylesheet_tag: preload: true }}
