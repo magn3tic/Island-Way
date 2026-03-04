@@ -2,7 +2,6 @@
   <div class="container">
     <div class="content-text story-content">
       <div class="row align-items-lg-end">
-
         {% if section.settings.left_title != blank or section.settings.left_heading != blank %}
         <div class="col-lg-5 col-sm-6">
           <div class="section-heading">
@@ -15,26 +14,50 @@
           </div>
         </div>
         {% endif %}
-
         <div class="col-lg-6 col-sm-6 ms-auto">
           <div class="content-text">
-            {% if section.settings.icon_image != blank %}
-              <img src="{{ section.settings.icon_image | image_url }}" alt="icon">
+            {% if section.settings.icon_image != blank %} 
+              <img
+                src="{{ section.settings.icon_image | image_url }}"
+                alt="Island Way icon"
+                width="{{ section.settings.icon_image.width }}"
+                height="{{ section.settings.icon_image.height }}"
+                loading="lazy"
+                decoding="async"
+              >
             {% endif %}
             {% if section.settings.description != blank %}
               {{ section.settings.description }}
             {% endif %}            
           </div>
         </div>
-
         {% if section.settings.main_image != blank %}
         <div class="col-lg-12">
           <div class="image-box story-image">
-            <img src="{{ section.settings.main_image | image_url: width: 1200 }}" alt="story image">
+            <img
+              src="{{ section.settings.main_image | image_url: width: 1200, format: 'webp' }}"
+              srcset="
+                {{ section.settings.main_image | image_url: width: 400,  format: 'webp' }}  400w,
+                {{ section.settings.main_image | image_url: width: 600,  format: 'webp' }}  600w,
+                {{ section.settings.main_image | image_url: width: 800,  format: 'webp' }}  800w,
+                {{ section.settings.main_image | image_url: width: 1000, format: 'webp' }} 1000w,
+                {{ section.settings.main_image | image_url: width: 1200, format: 'webp' }} 1200w
+              "
+              sizes="
+                (max-width: 480px) 100vw,
+                (max-width: 768px) 100vw,
+                (max-width: 1024px) 80vw,
+                1200px
+              "
+              alt="{{ section.settings.main_image.alt | default: 'Island Ways Story' }}"
+              width="{{ section.settings.main_image.width }}"
+              height="{{ section.settings.main_image.height }}"
+              loading="lazy"
+              decoding="async"
+            >
           </div>
         </div>
         {% endif %}
-
       </div>
     </div>
   </div>
