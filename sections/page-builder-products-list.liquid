@@ -71,15 +71,47 @@
                   >
                 {% endif %}
 
-                <span class="palm-shape"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/palm-shape.webp"></span>
-                {% if meta_fruit != blank %}
-                  <span class="food-shadow"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/food-shadow.webp"></span>
-                  <span class="cream-flavour">
-                    <img src="{{ meta_fruit | image_url: width: 600 }}" alt="{{ product.title }}">
-                  </span>
-                {% endif %}                
-              </div>
+                <span class="palm-shape">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/palm-shape.webp"
+                    alt="Islandway Palm Shape"
+                    width="300"
+                    height="300"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                </span>
 
+                {% if meta_fruit != blank %}
+                  <span class="food-shadow">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/food-shadow.webp"
+                      alt="Islandway Food shadow"
+                      width="300"
+                      height="300"
+                      loading="lazy"
+                      decoding="async"
+                    >
+                  </span>
+                  <span class="cream-flavour">
+                    <img
+                      src="{{ meta_fruit | image_url: width: 600, format: 'webp' }}"
+                      srcset="
+                        {{ meta_fruit | image_url: width: 300, format: 'webp' }} 300w,
+                        {{ meta_fruit | image_url: width: 450, format: 'webp' }} 450w,
+                        {{ meta_fruit | image_url: width: 600, format: 'webp' }} 600w,
+                        {{ meta_fruit | image_url: width: 900, format: 'webp' }} 900w
+                      "
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                      alt="{{ product.title | escape }}"
+                      width="{{ meta_fruit.width }}"
+                      height="{{ meta_fruit.height }}"
+                      loading="lazy"
+                      decoding="async"
+                    >
+                  </span>
+                {% endif %}               
+              </div>
               <div class="text-box">
                 <h3 class="title">{{ product.title }}</h3>
                 {% if block.settings.pack_info != blank or block.settings.shell_info != blank %}
@@ -95,7 +127,6 @@
                     {% endif %}
                   </ul>
                 {% endif %}
-
                 {% if availability_text == 'Available Online' %}
                 <div class="price-ratting">
                   <span class="price-text">{{ product.price | money }}</span>
@@ -104,7 +135,6 @@
                 {% else %}
                   <span class="cta-btn alt">Available in Store</span>
                 {% endif %}
-
               </div>
             </a>
           </div>
@@ -121,7 +151,6 @@
         </div>
       {% endif %}
     </div>
-
   </div>
 </section>
 
