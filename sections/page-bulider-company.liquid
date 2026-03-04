@@ -4,7 +4,18 @@
       {% if block.settings.logo != blank %}
         <div class="slide">
           <div class="company-logo">
-            <img src="{{ block.settings.logo | image_url }}" alt="{{ block.settings.logo.alt | default: 'Company logo' }}" width = "188" height = "42">
+          <img
+            src="{{ block.settings.logo | image_url: width: 188, format: 'webp' }}"
+            srcset="
+              {{ block.settings.logo | image_url: width: 188, format: 'webp' }} 1x,
+              {{ block.settings.logo | image_url: width: 376, format: 'webp' }} 2x
+            "
+            alt="{{ block.settings.logo.alt | default: 'Company logo' }}"
+            width="188"
+            height="42"
+            loading="lazy"
+            decoding="async"
+          >
           </div>
         </div>
       {% endif %}
