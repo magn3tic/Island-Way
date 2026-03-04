@@ -18,14 +18,24 @@
               loop
             {% endif %}
             playsinline
-            poster="{{ section.settings.poster | image_url }}"
+            width = "100%"
+            height = "auto"
+            preload="none"
+            poster="{{ section.settings.poster | image_url: width: 1080, format: 'webp' }}"
           >
             <source src="{{ section.settings.product_video }}" type="video/mp4">
           </video>
         {% endif %}
 
         <a class="video-btn" href="javascript:;">
-          <img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/v-btn.webp" alt="play button">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/v-btn.webp"
+            alt="Islandway Play button"
+            width="60"
+            height="60"
+            loading="lazy"
+            decoding="async"
+          >
         </a>
       </div>
     </div>
