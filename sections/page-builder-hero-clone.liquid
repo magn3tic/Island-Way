@@ -86,12 +86,38 @@
   </div>
   {% if section.settings.left_palm != blank %}
     <span class="hero-palm-left">
-      <img src="{{ section.settings.left_palm | image_url }}" alt="left palm">
+      <img
+        src="{{ section.settings.left_palm | image_url: width: 400, format: 'webp' }}"
+        srcset="
+          {{ section.settings.left_palm | image_url: width: 200, format: 'webp' }} 200w,
+          {{ section.settings.left_palm | image_url: width: 400, format: 'webp' }} 400w,
+          {{ section.settings.left_palm | image_url: width: 600, format: 'webp' }} 600w
+        "
+        sizes="(max-width: 768px) 30vw, 20vw"
+        alt="{{ section.settings.left_palm | default: '' }}"
+        width="{{ section.settings.left_palm }}"
+        height="{{ section.settings.left_palm }}"
+        loading="eager"
+        decoding="async"
+      >
     </span>
   {% endif %}
   {% if section.settings.right_palm != blank %}
     <span class="hero-palm-right">
-      <img src="{{ section.settings.right_palm | image_url }}" alt="right palm">
+       <img
+        src="{{ section.settings.right_palm | image_url: width: 400, format: 'webp' }}"
+        srcset="
+          {{ section.settings.right_palm | image_url: width: 200, format: 'webp' }} 200w,
+          {{ section.settings.right_palm | image_url: width: 400, format: 'webp' }} 400w,
+          {{ section.settings.right_palm | image_url: width: 600, format: 'webp' }} 600w
+        "
+        sizes="(max-width: 768px) 30vw, 20vw"
+        alt="{{ section.settings.right_palm | default: '' }}"
+        width="{{ section.settings.right_palm }}"
+        height="{{ section.settings.right_palm }}"
+        loading="eager"
+        decoding="async"
+      >
     </span>
   {% endif %}
 </section>
