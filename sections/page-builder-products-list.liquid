@@ -55,21 +55,7 @@
                     >
                   </span>
                 {% else %}
-                  <img
-                    src="{{ product.featured_image | image_url: width: 600, format: 'webp' }}"
-                    srcset="
-                      {{ product.featured_image | image_url: width: 300, format: 'webp' }} 300w,
-                      {{ product.featured_image | image_url: width: 450, format: 'webp' }} 450w,
-                      {{ product.featured_image | image_url: width: 600, format: 'webp' }} 600w,
-                      {{ product.featured_image | image_url: width: 900, format: 'webp' }} 900w
-                    "
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                    alt="{{ product.title | escape }}"
-                    width="{{ product.featured_image.width }}"
-                    height="{{ product.featured_image.height }}"
-                    loading="lazy"
-                    decoding="async"
-                  >
+                    {{ product.featured_image | image_url: width: 600 | image_tag }}
                 {% endif %}
 
                 <span class="palm-shape">
