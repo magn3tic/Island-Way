@@ -87,8 +87,8 @@
         "
         sizes="(max-width: 768px) 30vw, 20vw"
         alt="{{ section.settings.left_palm | default: '' }}"
-        width="{{ section.settings.left_palm }}"
-        height="{{ section.settings.left_palm }}"
+        width="{{ section.settings.left_palm.width }}"
+        height="{{ section.settings.left_palm.height }}"
         loading="eager"
         decoding="async"
       >
@@ -105,8 +105,8 @@
         "
         sizes="(max-width: 768px) 30vw, 20vw"
         alt="{{ section.settings.right_palm | default: '' }}"
-        width="{{ section.settings.right_palm }}"
-        height="{{ section.settings.right_palm }}"
+        width="{{ section.settings.right_palm .width}}"
+        height="{{ section.settings.right_palm.height }}"
         loading="eager"
         decoding="async"
       >
