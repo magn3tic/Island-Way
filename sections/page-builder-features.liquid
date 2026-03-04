@@ -3,15 +3,23 @@
     <img class="service-left-img hand-bowl1" src="{{ section.settings.left_img | image_url }}" alt="image" width = "{{ section.settings.left_img.width }}" height = "{{ section.settings.left_img.height }}">
   {% endif %}
   {% if section.settings.right_img != blank %}
-    <img class="service-left-img hand-bowl2" 
-    src="{{ section.settings.right_img | image_url }}" 
-    alt="{{ section.settings.right_img.alt }}"
-    width = "{{ section.settings.right_img.width }}"
-    height = "{{ section.settings.right_img.height }}"
-    data-src = "{{ section.settings.right_img }}"
-    data-widths = "[540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
-    data-sizes = "auto"
-  >
+    <img
+      class="service-left-img hand-bowl2"
+      src="{{ section.settings.right_img | image_url: width: 900, format: 'webp' }}"
+      srcset="
+        {{ section.settings.right_img | image_url: width: 540, format: 'webp' }}  540w,
+        {{ section.settings.right_img | image_url: width: 720, format: 'webp' }}  720w,
+        {{ section.settings.right_img | image_url: width: 900, format: 'webp' }}  900w,
+        {{ section.settings.right_img | image_url: width: 1080, format: 'webp' }} 1080w,
+        {{ section.settings.right_img | image_url: width: 1296, format: 'webp' }} 1296w
+      "
+      sizes="(max-width: 768px) 100vw, 50vw"
+      alt="{{ section.settings.right_img.alt | default: 'Service image' }}"
+      width="{{ section.settings.right_img.width }}"
+      height="{{ section.settings.right_img.height }}"
+      loading="lazy"
+      decoding="async"
+    >
   {% endif %}
 
   {% if section.settings.feature_tag != blank %}
