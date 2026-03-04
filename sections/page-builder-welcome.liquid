@@ -2,12 +2,10 @@
   {% assign slider_open = false %}
   {% for block in section.blocks %}
     {% case block.type %}
-
       {% when 'about' %}
         <section class="content-area about">
            <span class="about-palm-left"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/about-palm-left.webp" alt="image"></span>
            <span class="about-palm-right"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/about-palm-right.webp" alt="image"></span>
-
           <div class="container">
             <div class="row align-items-lg-center">
               <div class="col-lg-6 col-sm-6 order-lg-1 order-2">
@@ -19,7 +17,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="col-lg-5 col-sm-6 order-lg-2 order-1 ms-auto">
                 <div class="section-heading">
                   {% if block.settings.about_subheading %}
@@ -29,7 +26,6 @@
                     <h2 class="heading text_white">{{ block.settings.about_heading }}</h2>
                   {% endif %}
                 </div>
-
                 <div class="content-text about text_white">
                   {{ block.settings.about_text }}
                 </div>
@@ -37,36 +33,76 @@
             </div>
           </div>
         </section>
-
       {% when 'product_slider' %}
         {% unless slider_open %}
           <section class="content-area pt-0">
             <div class="product-slider">
           {% assign slider_open = true %}
         {% endunless %}
-
       {% when 'product_slide' %}
         {% if slider_open %}
           <div class="slide">
             <span class="product-image">
-              <img src="{{ block.settings.slide_image | image_url: width: 900 }}" alt="product">
+              <img
+                src="{{ block.settings.slide_image | image_url: width: 900, format: 'webp' }}"
+                srcset="
+                  {{ block.settings.slide_image | image_url: width: 300, format: 'webp' }} 300w,
+                  {{ block.settings.slide_image | image_url: width: 500, format: 'webp' }} 500w,
+                  {{ block.settings.slide_image | image_url: width: 700, format: 'webp' }} 700w,
+                  {{ block.settings.slide_image | image_url: width: 900, format: 'webp' }} 900w
+                "
+                sizes="
+                  (max-width: 480px) 100vw,
+                  (max-width: 768px) 80vw,
+                  50vw
+                "
+                alt="{{ block.settings.slide_image.alt | default: 'Product image' }}"
+                width="{{ block.settings.slide_image.width }}"
+                height="{{ block.settings.slide_image.height }}"
+                loading="lazy"
+                decoding="async"
+              >
             </span>
           </div>
         {% endif %}
-
       {% when 'sustainability' %}
         {% if slider_open %}
             </div>
           </section>
           {% assign slider_open = false %}
         {% endif %}
-
         <section class="content-area feature-bg pb-0">
           <div class="feature-bg"></div>
-            <span class="feature-left-food"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/hand-food-left.webp" alt="img"></span>
-            <span class="feature-right-food d-none d-sm-block"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/hand-food-right.webp" alt="img"></span>
-            <span class="feature-right-food d-sm-none"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/hand-food-right-mobile.webp" alt="img"></span>
-
+            <span class="feature-left-food"> 
+              <img
+                src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/hand-food-left.webp"
+                alt="Island Way hand left"
+                width="727"
+                height="557"
+                loading="lazy"
+                decoding="async"
+              >
+          </span>
+            <span class="feature-right-food d-none d-sm-block">
+            <img
+                src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/hand-food-right.webp"
+                alt="Island Way hand right"
+                width="524"
+                height="564"
+                loading="lazy"
+                decoding="async"
+              >
+          </span>
+            <span class="feature-right-food d-sm-none">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/hand-food-right-mobile.webp"
+                alt="Island Way hand right mobile"
+                width="412"
+                height="321"
+                loading="lazy"
+                decoding="async"
+              >
+              </span>
           <div class="container">
             <div class="feature-text">
               <div class="row align-items-end">
@@ -88,12 +124,17 @@
               </div>
             </div>
           </div>
-
           <div class="feature-bottom-bg">
-              <img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/feature-bg.webp" alt="image">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/feature-bg.webp.webp"
+                alt="Island Way feature bottom"
+                width="1920"
+                height="183"
+                loading="lazy"
+                decoding="async"
+              >
           </div>
         </section>
-
     {% endcase %}
   {% endfor %}
 
