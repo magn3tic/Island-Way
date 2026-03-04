@@ -50,6 +50,11 @@
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">  
+  <!--{{ 'predective-search.js' | asset_url | script_tag }}-->
+
 {% comment %} 
   Vendor 
 {% endcomment %} 
@@ -74,6 +79,7 @@
 {% comment %} 
   Styles 
 {% endcomment %}
+
 {{ 'variables.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'sections.css' | asset_url | stylesheet_tag: preload: true }}
@@ -94,4 +100,4 @@
 {% comment %} 
   Custom 
 {% endcomment %}
-<link href="{{ 'style.css' | asset_url }}" rel="stylesheet">
+{{ 'style.css' | asset_url | stylesheet_tag: preload: true }}
