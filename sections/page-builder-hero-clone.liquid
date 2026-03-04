@@ -1,21 +1,18 @@
 {% comment %} 
   Hero Section with Video Background and Decorative Fruit Images 
 {% endcomment %}
-
 <section class="hero-area {% if section.settings.add_custom_class %}hero-no-anim{% endif %} pb-0">
-  {% if section.settings.video_url != blank %}
-    <video
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="metadata"
-      {% if section.settings.poster != blank %}
-        poster="{{ section.settings.poster | image_url: width: 1200, format: 'webp' }}"
-      {% endif %}
-    >
-      <source src="{{ section.settings.video_url }}" type="video/mp4">
-    </video>
+  {% if section.settings.video != blank %}
+  {% assign poster_url =  section.settings.poster | image_url: width: 1200, format: 'webp' %}
+  {% if section.settings.video != blank %}
+  {{ section.settings.video | video_tag: 
+    autoplay: true, 
+    loop: true, 
+    muted: true, 
+    playsinline: true,
+    poster: poster_url
+  }}
+{% endif %}
    
     
   {% endif %}
@@ -120,8 +117,8 @@
     "name": "Hero Section",
     "settings": [
       {
-        "type": "url",
-        "id": "video_url",
+        "type": "video",
+        "id": "video",
         "label": "Video URL (.mp4)"
       },
       {
