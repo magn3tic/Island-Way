@@ -27,12 +27,48 @@
           <div class="col-lg-4 col-sm-6">
             <a href="{{ product.url }}" class="product-box et-js-tilt">
               <div class="image-box">
-
                 {% if meta_featured != blank %}
-                  <img src="{{ meta_featured | image_url: width: 600 }}" alt="{{ product.title }}" loading="lazy">
-                  <span class="food-box-shadow"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/box-shadow.webp"></span>
+                  <img
+                    src="{{ meta_featured | image_url: width: 600, format: 'webp' }}"
+                    srcset="
+                      {{ meta_featured | image_url: width: 300, format: 'webp' }} 300w,
+                      {{ meta_featured | image_url: width: 450, format: 'webp' }} 450w,
+                      {{ meta_featured | image_url: width: 600, format: 'webp' }} 600w,
+                      {{ meta_featured | image_url: width: 900, format: 'webp' }} 900w
+                    "
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    alt="{{ product.title | escape }}"
+                    width="{{ meta_featured.width }}"
+                    height="{{ meta_featured.height }}"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <span class="food-box-shadow">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/box-shadow.webp"
+                      alt=""
+                      width="600"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    >
+                  </span>
                 {% else %}
-                  <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title }}" loading="lazy">
+                  <img
+                    src="{{ product.featured_image | image_url: width: 600, format: 'webp' }}"
+                    srcset="
+                      {{ product.featured_image | image_url: width: 300, format: 'webp' }} 300w,
+                      {{ product.featured_image | image_url: width: 450, format: 'webp' }} 450w,
+                      {{ product.featured_image | image_url: width: 600, format: 'webp' }} 600w,
+                      {{ product.featured_image | image_url: width: 900, format: 'webp' }} 900w
+                    "
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    alt="{{ product.title | escape }}"
+                    width="{{ product.featured_image.width }}"
+                    height="{{ product.featured_image.height }}"
+                    loading="lazy"
+                    decoding="async"
+                  >
                 {% endif %}
 
                 <span class="palm-shape"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/palm-shape.webp"></span>
