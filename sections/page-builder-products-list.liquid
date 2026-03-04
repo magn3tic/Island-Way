@@ -42,21 +42,8 @@
             <a href="{{ product.url }}" class="product-box et-js-tilt">
               <div class="image-box">
                 {% if meta_featured != blank %}
-                  <img
-                    src="{{ meta_featured | image_url: width: 600, format: 'webp' }}"
-                    srcset="
-                      {{ meta_featured | image_url: width: 300, format: 'webp' }} 300w,
-                      {{ meta_featured | image_url: width: 450, format: 'webp' }} 450w,
-                      {{ meta_featured | image_url: width: 600, format: 'webp' }} 600w,
-                      {{ meta_featured | image_url: width: 900, format: 'webp' }} 900w
-                    "
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                    alt="{{ product.title | escape }}"
-                    width="{{ meta_featured.width }}"
-                    height="{{ meta_featured.height }}"
-                    loading="lazy"
-                    decoding="async"
-                  >
+                    {{ meta_featured | image_url: width: 600 | image_tag }}
+                    
                   <span class="food-box-shadow">
                     <img
                       src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/box-shadow.webp"
