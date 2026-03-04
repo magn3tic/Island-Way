@@ -4,7 +4,7 @@
       {% if block.settings.logo != blank %}
         <div class="slide">
           <div class="company-logo">
-            <img src="{{ block.settings.logo | image_url }}" alt="{{ block.settings.logo.alt | default: 'Company logo' }}">
+            <img src="{{ block.settings.logo | image_url }}" alt="{{ block.settings.logo.alt | default: 'Company logo' }}" width = "{{ block.settings.logo.width }}" height = "{{ block.settings.logo.height }}">
           </div>
         </div>
       {% endif %}
