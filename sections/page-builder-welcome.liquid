@@ -83,11 +83,7 @@
                   {{ block.settings.slide_image | image_url: width: 700, format: 'webp' }} 700w,
                   {{ block.settings.slide_image | image_url: width: 900, format: 'webp' }} 900w
                 "
-                sizes="
-                  (max-width: 480px) 100vw,
-                  (max-width: 768px) 80vw,
-                  50vw
-                "
+                sizes= "(max-width: 480px) 100vw, (max-width: 768px) 80vw, 50vw"
                 alt="{{ block.settings.slide_image.alt | default: 'Product image' }}"
                 width="{{ block.settings.slide_image.width }}"
                 height="{{ block.settings.slide_image.height }}"
