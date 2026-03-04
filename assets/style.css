@@ -5406,3 +5406,11 @@ body .hero-no-anim .hero-shape img {
     white-space: nowrap;
     display: block !important;
 }
+
+#smooth-content.main-wrapper,
+.main-wrapper {
+  position: relative;
+  overflow-x: hidden;
+  will-change: transform;
+  transform: translateZ(0); 
+}
