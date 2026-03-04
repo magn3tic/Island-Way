@@ -1,6 +1,6 @@
 <div class="video-bg-area bg_blue">
   {% if section.settings.bg_video != blank %}
-    <video autoplay muted loop playsinline>
+    <video autoplay muted loop playsinline preload="none" width = "100%" height = "auto">
       <source src="{{ section.settings.bg_video }}" type="video/mp4">
     </video>
   {% endif %}
