@@ -64,7 +64,7 @@
 {% comment %} 
   Critical Styles
 {% endcomment %} 
-
+{{ 'style.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'variables.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
 
@@ -82,10 +82,8 @@
 {% comment %} 
  Non Critical Styles 
 {% endcomment %}
-
 {{ 'sections.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'cart.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'collection.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'product.css' | asset_url | stylesheet_tag: preload: true }}
 
- {{ 'style.css' | asset_url | stylesheet_tag }}
