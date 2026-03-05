@@ -17,7 +17,7 @@
       "name": "Hero Section Cloned",
       "settings": {
         "video": "shopify://files/videos/hero-video.mp4",
-        "poster": "shopify://shop_images/Island_Way_background_video_Poster.png",
+        "poster": "shopify://shop_images/Island_Way_background_video_Poster.webp",
         "heading": "MAKE A BREAK",
         "subheading": "FOR THE ISLANDS TODAY",
         "text": "<p>Island Way turns carefully selected fruit into delicious frozen<br/>treats that are paradise in every bite.</p>",
@@ -54,13 +54,13 @@
         "logo_yqpmkr": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/Wegmans-logo.png"
+            "logo": "shopify://shop_images/Wegmans-logo.webp"
           }
         },
         "logo_TwqadH": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/krogers-logo.png"
+            "logo": "shopify://shop_images/krogers-logo.webp"
           }
         },
         "logo_BKhQbK": {
@@ -84,7 +84,7 @@
         "logo_BCq7gh": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/Wegmans-logo.png"
+            "logo": "shopify://shop_images/Wegmans-logo.webp"
           }
         }
       },

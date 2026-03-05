@@ -18,7 +18,7 @@
   {% if settings.favicon != blank %}
   <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: '32', height: '32' }}">
   {% else %}
-  <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/favicon.png?v=1768335490">
+  <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/favicon.webp?v=1768335490">
   {%- endif -%}
 
   {% render 'meta-tags' %}
@@ -45,7 +45,7 @@
   }
 </style>
   {% render 'styles-scripts' %}
-</head>
+<script data-custom-wpsob="1">function wpsobIsInViewport(el){const rect=el.getBoundingClientRect();return rect.top>=0&&rect.left>=0&&rect.bottom<=(window.innerHeight||document.documentElement.clientHeight)&&rect.right<=(window.innerWidth||document.documentElement.clientWidth)}function wpsobRemoveDims(img){if(img.hasAttribute("data-wpsob-width"))img.removeAttribute("width");if(img.hasAttribute("data-wpsob-height"))img.removeAttribute("height")}function wpsobCheckVisibleImages(){const imgs=document.querySelectorAll("img");for(let i=0;i<imgs.length;i++)if(wpsobIsInViewport(imgs[i]))wpsobRemoveDims(imgs[i])}function wpsobRemoveDimsAll(){const imgs=document.querySelectorAll("img");for(let i=0;i<imgs.length;i++)wpsobRemoveDims(imgs[i])}window.onload=wpsobCheckVisibleImages;window.addEventListener("scroll",wpsobRemoveDimsAll);</script></head>
 
 <body class="{{ request.page_type | prepend: 'page-type-' }}">
 
