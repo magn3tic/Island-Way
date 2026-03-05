@@ -1,7 +1,7 @@
 <!-- Content Start -->
 <section class="content-area bg_blue other-product" id="related-products-{{ section.id }}">
   {% if section.settings.enable_shape %}
-    <img class="other-product-shape" src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/service-palmr.webp" alt="image">
+    <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" class="other-product-shape" src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/service-palmr.webp" alt="image">
   {% endif %}
 
   <div class="container">
@@ -24,12 +24,12 @@
         <div class="slide">
           <a href="{{ product.url }}" class="product-box et-js-tilt">
             <div class="image-box">
-              <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title }}">
-              <span class="palm-shape"><img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/palm-shape.webp" alt="image"></span>
+              <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title }}">
+              <span class="palm-shape"><img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/palm-shape.webp" alt="image"></span>
 
               {% if product.metafields.custom.fruit_image != blank %}
                 <span class="cream-flavour">
-                  <img src="{{ product.metafields.custom.fruit_image | image_url }}" alt="{{ product.title }} flavor">
+                  <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="{{ product.metafields.custom.fruit_image | image_url }}" alt="{{ product.title }} flavor">
                 </span>
               {% endif %}
             </div>

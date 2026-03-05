@@ -1,13 +1,13 @@
 <section class="content-area product-details bg_brown pb-0">
   {% if product %}
-    <img class="product-details-shape" src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/product-details-palm.webp" alt="image">
+    <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" class="product-details-shape" src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/product-details-palm.webp" alt="image">
 
     <div class="container">
       <div class="row">
         <div class="col-lg-5 col-sm-6">
           <div class="pr-slide-box">
             <span class="palm-shape">
-              <img src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/palm-shape.webp" alt="palm shape">
+              <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" src="https://cdn.shopify.com/s/files/1/0732/7829/2203/files/palm-shape.webp" alt="palm shape">
             </span>
 
             {% assign meta_featured = product.metafields.custom.custom_featured_image %}
@@ -17,7 +17,7 @@
               {% if meta_featured != blank %}
                 <div class="slide">
                   <div class="image-box">
-                    <img 
+                    <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" 
                       src="{{ meta_featured | image_url: width: 800 }}" 
                       alt="{{ product.title }} (Featured Image)">
                   </div>
@@ -39,7 +39,7 @@
             {% if meta_featured != blank %}
               <div class="slide">
                 <div class="thumb-box">
-                  <img 
+                  <img data-wpsob="1" data-wpsob-height="1" height="1" data-wpsob-width="1" width="1" data-wpsob-lazy="1" loading="lazy" 
                     src="{{ meta_featured | image_url: width: 200 }}" 
                     alt="{{ product.title }} (Featured Image Thumbnail)">
                 </div>
