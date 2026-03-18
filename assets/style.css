@@ -2439,6 +2439,9 @@ section {
 .store-locator .heading {
     font-size: 90px
 }
+.locator-cta .header{
+    font-size:77px
+}
 
 .store-locator .contact-shape-two {
     right: -26px;
