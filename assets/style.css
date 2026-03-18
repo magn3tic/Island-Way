@@ -5294,6 +5294,9 @@ body .shopify-policy__container {
 .store-locator .heading {
     font-size: 70px;
 }
+.locator-cta heading{
+    font-size:40px
+}
 
 .content-image.contact-shape {
     position: relative;
