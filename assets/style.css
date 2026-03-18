@@ -55,7 +55,8 @@ textarea:focus {
 
 img {
     max-width: 100%;
-    display: block
+    display: block;
+    height: auto
 }
 
 .h1,
@@ -4094,6 +4095,9 @@ input[type="search"]::-webkit-search-results-decoration {
 
     .store-locator .heading {
         font-size: 44px;
+    }
+    .locator-cta .heading{
+        font-size:35px
     }
 
     .store-locator .contact-shape-one {
